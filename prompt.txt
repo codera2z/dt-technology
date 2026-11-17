@@ -13,7 +13,7 @@ Budget: free tools only. Repo: [NEW REPO URL]
 3. SITE
 One vertically scrolling page at "/". No footer. Header: logo/wordmark + company name + exactly two links: Services and Contact. No extra pages or sections unless I change this.
 Goal for now: an amazing site running locally. Out of scope until I say so: contact-form wiring, hosting, domain, analytics.
-Native scrolling, readable copy, accessibility and performance come before effects.
+Readable copy, accessibility and performance come before effects. Native scrolling is preferred, not mandatory: scroll-driven interactions or scroll-jacking, including immersive/autoplaying 3D scenes, are allowed when they materially enrich the layout or story. Preserve user control, keyboard navigation and clear access to content, with a meaningful reduced-motion/static alternative; never make essential information available only through animation.
 
 4. MEMORY: THE REPO, NOT THE CHAT
 Your context window is small. Three files in my repo carry everything:
