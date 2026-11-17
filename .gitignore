@@ -1,4 +1,4 @@
-﻿node_modules
+node_modules
 dist
 .vite
 *.local
@@ -6,3 +6,4 @@ dist
 !.env.example
 .DS_Store
 *.log
+*.tsbuildinfo
