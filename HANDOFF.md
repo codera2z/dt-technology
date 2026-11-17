@@ -1,10 +1,10 @@
-# HANDOFF v2 | date: 2026-11-17 | last commit: 91c09c8
+# HANDOFF v3 | date: 2026-11-17 | last commit: 709fc47
 
 Rules for this file: overwrite the whole file each time (never append). Max 350 words. Keep this template. Keep only what a brand-new chat needs.
 
 ## Phase and next step
 - Phase: 2 (Blueprint)
-- Next: Present the Blueprint: concept, tone, scroll storyline, three visual directions with pros/cons and recommendation, component plan, and draft copy. Wait for "APPROVED: Blueprint" before editing DESIGN.md.
+- Next: Revise the Blueprint with the approved motion flexibility, then wait for "APPROVED: Blueprint" before filling DESIGN.md with the final visual system.
 
 ## Approved (wording is final)
 - Stack: Vite 8.3.8 + React 19.3.1 + TypeScript 6.0.3 + Tailwind CSS 4.3.5 using @tailwindcss/vite 4.3.5 + Motion 14.14.0.
@@ -19,6 +19,7 @@ Rules for this file: overwrite the whole file each time (never append). Max 350 
 - Team: small core team; do not publish team size, internal structure or individual technical skills.
 - Primary CTA: "Discuss Your Project"; header Contact link anchors to the Contact section.
 - Brand: reuse an existing logo if one is found; none found in repository root or src. Develop visual identity in Blueprint.
+- Scroll/3D: native scrolling is preferred, not mandatory; scroll-jacking and autoplaying 3D are allowed when they materially improve the story, with accessible reduced-motion alternatives.
 - One-page site at `/`; header has brand + Services + Contact; no footer. Contact form is UI only; no wiring, hosting, domain or analytics yet.
 - Environment: Windows 11; Node 26.13.1, npm 11.20.0, Git 2.56.1.windows.1.
 
