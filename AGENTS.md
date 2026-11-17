@@ -5,9 +5,11 @@ Standing rules for any AI agent in this repo. Keep this file short. Current prog
 ## Project
 One-page marketing site for DT Technology (websites and web apps, AI/GenAI, RAG and LLM integrations, automation, deployment and maintenance). One scrolling page at `/`. No footer. Header: logo/wordmark + company name + two links (Services, Contact). No other routes, blog, pricing, portfolio, testimonials or sections without the owner's explicit approval.
 
-Scope now: an excellent and expensive site running locally. The Contact section is UI only (labels, validation, success and error states). Do not connect any service, add keys or paste third-party form code yet. Hosting, domain and analytics are later phases.
+Scope now: an excellent site running locally. The Contact section is UI only (labels, validation, success and error states). Do not connect any service, add keys or paste third-party form code yet. Hosting, domain and analytics are later phases.
 
 ## Content rules
+- No invented clients, logos, testimonials, case studies, statistics, credentials, awards or delivery claims.
+- Positioning line: "AI-accelerated, engineer-accountable."
 - Plain, specific service copy. No buzzword stacking.
 - The owner is not technical. Explain in plain language.
 
@@ -21,6 +23,7 @@ New dependencies need approval: name, purpose, size, licence, simpler alternativ
 - Files under 150 lines. One component per file. Descriptive names.
 - Semantic HTML: one h1, correct heading order, landmarks, alt text, visible focus, everything keyboard operable, AA contrast.
 - Respect `prefers-reduced-motion`: every animation has a static fallback.
+- Native scrolling only. No scroll hijacking. Animate transform and opacity only.
 - Mobile first. Check widths 360, 390, 768, 1024, 1440.
 - No external scripts, CDNs or trackers. Fonts via package or self-hosted. Images sized, compressed, lazy-loaded below the fold.
 - No secrets in the repo. `.env` files stay git-ignored.
