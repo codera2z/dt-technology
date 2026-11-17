@@ -28,13 +28,13 @@ One large h1, body 16 to 18px, line-height 1.5 to 1.7. Distinctive but legible f
 | Services | TBD | TBD | TBD | TBD |
 | Contact | TBD | TBD | TBD | TBD |
 
-Changes between sections connect to the content. Background or scenery shifts are gradual and use opacity or transform. No unrelated full-screen effects. Sticky visuals need a static mobile fallback.
+Changes between sections should connect to the content. Scroll-driven transitions, pinned/sticky sequences, parallax, scroll-jacking or immersive 3D are valid design tools when they make the story clearer or the layout more memorable; do not add them only for spectacle. Keep the experience navigable and readable, with a useful static/mobile fallback where needed.
 
 ## Components
 Define default, hover, focus and disabled states for: buttons (primary, secondary), links, cards or list items, tabs or accordion (if used), form fields (visible labels, inline validation, success and error messages), header.
 
 ## Motion
-Motion guides attention, shows a state change or tells the story. UI transitions 150 to 400ms, scenic up to 800ms, one consistent easing, at most one signature interaction. Reduced motion: no parallax, no autoplay, crossfades only.
+Motion guides attention, shows a state change or tells the story. UI transitions 150 to 400ms, scenic up to 800ms, one consistent easing. Scroll-driven motion, parallax and autoplaying 3D scenes are allowed when they materially enrich the experience; keep motion purposeful and preserve control of essential navigation and content. Respect `prefers-reduced-motion` with a meaningful static or reduced-motion alternative; reduced-motion mode must not depend on autoplay, parallax or continuous movement.
 
 ## Imagery
 Prefer open or custom illustration, diagrams, abstract or 3D visuals. No generic stock photos. Never show a fake product screenshot as real work; label demos as concepts. Every asset is logged in LICENCES.md.
