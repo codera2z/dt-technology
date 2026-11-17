@@ -22,8 +22,8 @@ New dependencies need approval: name, purpose, size, licence, simpler alternativ
 ## Code rules
 - Files under 150 lines. One component per file. Descriptive names.
 - Semantic HTML: one h1, correct heading order, landmarks, alt text, visible focus, everything keyboard operable, AA contrast.
-- Respect `prefers-reduced-motion`: every animation has a static fallback.
-- Native scrolling only. No scroll hijacking. Animate transform and opacity only.
+- Respect `prefers-reduced-motion`: every animation has a static or reduced-motion alternative.
+- Native scrolling is preferred, not mandatory. Scroll-driven interactions, scroll-jacking and immersive/autoplaying 3D scenes are allowed when they materially strengthen the story or layout. Use them deliberately; preserve user control, keyboard navigation, readable content and performance. Provide a meaningful static or reduced-motion alternative. Prefer transform and opacity for routine UI animation, but other effects are allowed when justified by the design.
 - Mobile first. Check widths 360, 390, 768, 1024, 1440.
 - No external scripts, CDNs or trackers. Fonts via package or self-hosted. Images sized, compressed, lazy-loaded below the fold.
 - No secrets in the repo. `.env` files stay git-ignored.
