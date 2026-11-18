@@ -50,7 +50,9 @@ Rows reveal only on scroll into view. Hairline draws, copy staggers up, index ch
 ## Contact and submission
 Label: **[ 02 ] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
 Exact labels: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Neutral placeholders. Floating labels and expanding terracotta focus underline. Magnetic/shimmer submit button. States: loading/spinner, success with palette-matched particles and confirmation, error with gentle shake.
-Keep form submission in src/lib/submitContact.ts behind submitContact(data). Web3Forms uses import.meta.env.VITE_WEB3FORMS_KEY, a hidden honeypot and client validation. Keep provider logic isolated so an AWS swap needs only this module and its env configuration. Never commit a real key or fake success.
+**Owner scope update (18 Nov 2026):** Commit 4 currently covers the contact form UI and client-side validation only. The owner has deferred Web3Forms integration; do not add network submission, a honeypot, environment keys or delivery states until explicitly requested. Never fake successful delivery.
+
+When resumed, isolate provider logic in src/lib/submitContact.ts behind submitContact(data). Web3Forms should use import.meta.env.VITE_WEB3FORMS_KEY. Keep provider logic isolated so an AWS swap needs only this module and its environment configuration. Never commit a real key.
 
 **Email caveat:** hello@dttechnology.com came from Stitch and is unverified; confirm before public launch.
 

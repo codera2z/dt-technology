@@ -1,33 +1,34 @@
-# HANDOFF v14 | date: 2026-11-18 | last code commit: 274969e
+# HANDOFF v15 | date: 2026-11-18 | last code commit: 5c9f58e
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1 and 2 plus hero feedback corrections are committed.
-- Next: Owner to review final punctuation entrance; after approval, commit 3 (five service illustrations and in-view interactions). Final local build and responsive/accessibility checks remain deferred.
+- Phase: Build — commits 1–3 complete; Commit 4 form UI and client validation committed. Provider wiring is deferred.
+- Next: Wire Web3Forms only when requested; then complete Commit 5 polish, responsive, accessibility and performance review. Build and breakpoint QA remain deferred.
 
 ## Approved
-- Existing stack: Vite 8.3.8, React 19.3.1, TypeScript 6.0.3, Tailwind CSS 4.3.5, Motion 14.14.0. No new dependencies.
+- Existing stack: Vite, React, TypeScript, Tailwind CSS v4 and Motion. No new dependencies.
 - Warm cream / espresso / terracotta; EB Garamond display + Inter body; square-bracket identity.
 - Positioning: “AI-accelerated, engineer-accountable.”
 
 ## Locked decisions
 - One page: Hero, Services, Contact; no footer. Header has only Services and Contact.
-- Five services and visual/motion/form requirements are in DESIGN.md.
-- No fabricated claims or CDN assets. Contact uses Web3Forms via src/lib/submitContact.ts and VITE_WEB3FORMS_KEY; no key in Git.
+- Five service illustrations and contact requirements are in DESIGN.md.
+- No fabricated claims, CDN assets, secrets or personal data in Git.
+- Contact form fields and validation are implemented. Web3Forms, network submission, honeypot and delivery states are deferred until requested.
 - hello@dttechnology.com came from Stitch and is unverified; confirm before launch.
 
 ## Done
-- Commit 1: header/hero shell, service marquee/copy shell, contact intro, palette, self-hosted licensed fonts and scroll offsets. Preview provisionally accepted.
-- Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
-- Hero scene refinement f3d4d5c: richer globe mesh/depth, orbit rings, satellites, particles, highlight and light sweep.
-- Accent spacing correction b48ecd9: measure each word in EB Garamond and animate slot width; period moves with it.
-- Headline correction: the visible italic lettering is optically lowered by 0.04em, while the measured slot and period remain fixed. The word “grow” receives a small additional left inset, shared by its visible, sizing and measuring elements so the period still tracks its true width. The final period is rendered by CyclingAccent as a separate animated sibling: it keeps following the dynamic word width but now shares the word's initial blur-and-slide reveal. The clipping window expands vertically so the accent animation stays clean without moving the surrounding line.
+- Commit 1: header/hero shell, service marquee, contact intro, palette, licensed self-hosted fonts and scroll offsets.
+- Commit 2: original canvas scene, animated headline, cycling accent, opening wordmark and magnetic CTA.
+- Hero refinements: globe depth, orbits, particles, accent spacing and synchronized punctuation.
+- Commit 3: five original SVG service illustrations, in-view reveals, hover spotlight and reduced-motion handling.
+- Marquee: pinned to hero bottom with a seamless left-to-right loop.
+- Commit 4: accessible contact form, inline validation, floating labels and responsive styling. “Check details” validates only; it does not send.
 
 ## In progress / not verified
-- The latest 09:03 screenshot confirmed the shared baseline. A word-specific optical inset was added to “grow” only. The final period now animates in sync with the accent rather than appearing immediately. Initial accent entrance is included with the headline reveal.
-- Service illustrations, contact form/submission and global polish remain.
-- No local build or breakpoint QA has been reported.
+- Web3Forms wiring and real delivery confirmation remain deferred.
+- No local build, typecheck or breakpoint/browser QA has been reported.
 
 ## Owner preferences
 - Plain explanations; Windows PowerShell. No intermediate build logs/screenshots. Owner can share preview feedback any time.
