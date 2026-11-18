@@ -2,6 +2,15 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const words = ["scale", "ship", "grow", "launch"];
+const entrance = {
+  hidden: { opacity: 0, y: 18, filter: "blur(9px)" },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.82, delay: 0.96, ease: [0.16, 1, 0.3, 1] },
+  },
+};
 
 export function CyclingAccent() {
   const reduceMotion = useReducedMotion();
@@ -34,36 +43,46 @@ export function CyclingAccent() {
     return () => window.clearInterval(timer);
   }, [reduceMotion]);
 
-  if (reduceMotion) return <em className="hero-accent-static">scale</em>;
+  if (reduceMotion) {
+    return (
+      <span className="hero-title__mask hero-title__mask--static">
+        <em className="hero-accent-static">scale</em>
+      </span>
+    );
+  }
 
   return (
-    <>
-      <span
-        className="hero-title__mask"
-        aria-live="off"
-        style={{ width: widths[active] ? `${widths[active]}px` : undefined }}
-      >
-        <AnimatePresence initial={false}>
-          <motion.em
-            className="hero-accent"
-            key={words[active]}
-            initial={{ y: "112%", opacity: 0, filter: "blur(5px)" }}
-            animate={{
-              y: "0%", opacity: 1, filter: "blur(0px)",
-              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-            }}
-            exit={{ y: "-112%", opacity: 0, filter: "blur(4px)" }}
-            transition={{
-              y: { duration: 0.58, ease: [0.16, 1, 0.3, 1] },
-              opacity: { duration: 0.42 },
-              filter: { duration: 0.58 },
-              backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
-            }}
-          >
-            {words[active]}
-          </motion.em>
-        </AnimatePresence>
+    <motion.span
+      className="hero-title__mask"
+      aria-live="off"
+      initial="hidden"
+      animate="visible"
+      variants={entrance}
+      style={{ width: widths[active] ? `${widths[active]}px` : undefined }}
+    >
+      <span className="hero-accent hero-accent--sizer" aria-hidden="true">
+        {words[active]}
       </span>
+      <AnimatePresence initial={false}>
+        <motion.em
+          className="hero-accent"
+          key={words[active]}
+          initial={{ y: "112%", opacity: 0, filter: "blur(5px)" }}
+          animate={{
+            y: "0%", opacity: 1, filter: "blur(0px)",
+            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+          }}
+          exit={{ y: "-112%", opacity: 0, filter: "blur(4px)" }}
+          transition={{
+            y: { duration: 0.58, ease: [0.16, 1, 0.3, 1] },
+            opacity: { duration: 0.42 },
+            filter: { duration: 0.58 },
+            backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
+          }}
+        >
+          {words[active]}
+        </motion.em>
+      </AnimatePresence>
       <span className="hero-title__measure" aria-hidden="true">
         {words.map((word, index) => (
           <em
@@ -75,6 +94,6 @@ export function CyclingAccent() {
           </em>
         ))}
       </span>
-    </>
+    </motion.span>
   );
 }
