@@ -38,7 +38,7 @@ Repeat only these five services, separated by small dots:
 Scroll velocity may subtly affect speed/direction. No extra promotional phrases.
 
 ## Services
-Label: **[ 01 ] Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
+Label: **Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
 Five rows with distinct original illustrations:
 1. **Strategy & Budget:** roadmap path and milestones draw; allocation bars grow/rebalance; small counter.
 2. **Websites & Web Applications:** browser wireframe assembles, morphs desktop/tablet/phone; cursor moves and clicks.
@@ -48,11 +48,9 @@ Five rows with distinct original illustrations:
 Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause loops offscreen; provide static/reduced-motion alternatives.
 
 ## Contact and submission
-Label: **[ 02 ] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
+Label: **Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
 Exact labels: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Neutral placeholders. Floating labels and expanding terracotta focus underline. Magnetic/shimmer submit button. States: loading/spinner, success with palette-matched particles and confirmation, error with gentle shake.
-**Owner scope update (18 Nov 2026):** Commit 4 currently covers the contact form UI and client-side validation only. The owner has deferred Web3Forms integration; do not add network submission, a honeypot, environment keys or delivery states until explicitly requested. Never fake successful delivery.
-
-When resumed, isolate provider logic in src/lib/submitContact.ts behind submitContact(data). Web3Forms should use import.meta.env.VITE_WEB3FORMS_KEY. Keep provider logic isolated so an AWS swap needs only this module and its environment configuration. Never commit a real key.
+Keep provider logic in src/lib/submitContact.ts behind submitContact(data). Web3Forms uses import.meta.env.VITE_WEB3FORMS_KEY with a browser-side JSON POST, loading/success/error states and a hidden botcheck field. Keep provider logic isolated so an AWS swap needs only this module and its environment configuration. Never commit a real key. Copy .env.example to .env.local and add the access key locally.
 
 **Email caveat:** hello@dttechnology.com came from Stitch and is unverified; confirm before public launch.
 
