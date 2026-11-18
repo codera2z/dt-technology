@@ -21,6 +21,7 @@ Self-host EB Garamond for display and Inter for body/interface. Variable WOFF2 f
 Positioning: **AI-accelerated, engineer-accountable.** Speak plainly to startups and growing businesses; larger organisations are welcome. Do not invent or imply clients, products, case studies, testimonials, logos, metrics, credentials, awards, locations, response-time promises, guarantees or technical-stack claims.
 
 ## Hero
+Eyebrow: **[01] PRODUCTS / WEBSITES / AI / AUTOMATION**.
 Headline: **Build what matters. Then [scale / ship / grow / launch].** Cycle the italic accent through those words with a masked slide; reveal headline words from blur to sharp. Primary CTA: **Discuss Your Project**; secondary: **Explore services**.
 - Mobile: fit within one phone screen. Animation is a dimmed full-bleed backdrop behind centred text, never stacked below.
 - Desktop: text left, animation right.
@@ -38,7 +39,7 @@ Repeat only these five services, separated by small dots:
 Scroll velocity may subtly affect speed/direction. No extra promotional phrases.
 
 ## Services
-Label: **Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
+Label: **[02] Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
 Five rows with distinct original illustrations:
 1. **Strategy & Budget:** roadmap path and milestones draw; allocation bars grow/rebalance; small counter.
 2. **Websites & Web Applications:** browser wireframe assembles, morphs desktop/tablet/phone; cursor moves and clicks.
@@ -48,7 +49,7 @@ Five rows with distinct original illustrations:
 Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause loops offscreen; provide static/reduced-motion alternatives.
 
 ## Contact and submission
-Label: **Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
+Label: **[03] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
 Exact labels: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Neutral placeholders. Floating labels and expanding terracotta focus underline. Magnetic/shimmer submit button. States: loading/spinner, success with palette-matched particles and confirmation, error with gentle shake.
 The contact form currently provides client-side validation only and does not submit or send messages. Keep hello@dttechnology.com visible as the provisional email option even though the mailbox is not yet set up. When the owner creates a company inbox and explicitly asks to connect form delivery, add that company inbox as the receiving address and a second public email option. Do not use a personal inbox for Web3Forms or publish a personal email address.
 

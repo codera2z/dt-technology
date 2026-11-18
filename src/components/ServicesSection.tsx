@@ -34,7 +34,7 @@ export function ServicesSection() {
     <section className="services-section page-section" id="services"
       aria-labelledby="services-title">
       <div className="section-intro">
-        <p className="section-label">Services</p>
+        <p className="section-label">[02] Services</p>
         <h2 className="section-title" id="services-title">
           Good technology starts with the right decisions.
         </h2>

@@ -31,7 +31,7 @@ export function HeroSection() {
           animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.25, ease }}>
           <motion.p className="eyebrow hero-eyebrow" initial={reduceMotion ? false : { opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, delay: 0.35, ease }}>
-            PRODUCTS / WEBSITES / AI / AUTOMATION
+            [01] PRODUCTS / WEBSITES / AI / AUTOMATION
           </motion.p>
           <motion.h1 className="hero-title" id="hero-title" variants={headlineReveal}
             initial={reduceMotion ? false : "hidden"} animate="visible">
