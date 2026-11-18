@@ -2,6 +2,7 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 const words = ["scale", "ship", "grow", "launch"];
+const opticalClass = (word: string) => word === "grow" ? " hero-accent--grow" : "";
 const entrance = {
   hidden: { opacity: 0, y: 18, filter: "blur(9px)" },
   visible: {
@@ -60,12 +61,12 @@ export function CyclingAccent() {
       variants={entrance}
       style={{ width: widths[active] ? `${widths[active]}px` : undefined }}
     >
-      <span className="hero-accent hero-accent--sizer" aria-hidden="true">
+      <span className={`hero-accent hero-accent--sizer${opticalClass(words[active])}`} aria-hidden="true">
         {words[active]}
       </span>
       <AnimatePresence initial={false}>
         <motion.em
-          className="hero-accent"
+          className={`hero-accent${opticalClass(words[active])}`}
           key={words[active]}
           initial={{ y: "112%", opacity: 0, filter: "blur(5px)" }}
           animate={{
@@ -86,7 +87,7 @@ export function CyclingAccent() {
       <span className="hero-title__measure" aria-hidden="true">
         {words.map((word, index) => (
           <em
-            className="hero-accent hero-accent--measure"
+            className={`hero-accent hero-accent--measure${opticalClass(word)}`}
             key={word}
             ref={(node) => { measureRefs.current[index] = node; }}
           >
