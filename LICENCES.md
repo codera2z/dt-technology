@@ -1,8 +1,10 @@
 # LICENCES.md: third-party components and assets
 
-Log every third-party component, font, icon, illustration, animation, texture or 3D model. Check the licence on the item's own page, not the marketplace's front page. If it is unclear, do not use the item. Preserve required notices when redistributing third-party files.
+Log each third-party component and asset. Check the licence on the item's own page. Preserve required notices when redistributing.
 
-| Item | Source URL | Licence | Attribution / notice | Date checked | Used in | Dependencies |
-|---|---|---|---|---|---|---|
-| Space Grotesk | https://github.com/google/fonts/tree/main/ofl/spacegrotesk (OFL.txt: https://github.com/google/fonts/blob/main/ofl/spacegrotesk/OFL.txt) | SIL Open Font License 1.1 | Include copyright notice and OFL.txt when redistributing font files | 2026-11-17 | Approved display / heading font; font files not yet added | None; self-host font files |
-| DM Sans | https://github.com/google/fonts/tree/main/ofl/dmsans (OFL.txt: https://github.com/google/fonts/blob/main/ofl/dmsans/OFL.txt) | SIL Open Font License 1.1 | Include copyright notice and OFL.txt when redistributing font files | 2026-11-17 | Approved body / interface font; font files not yet added | None; self-host font files |
+| Item | Source URL | Licence | Attribution / notice | Date checked | Used in |
+|---|---|---|---|---|---|
+| EB Garamond variable (Latin, normal + italic) | https://github.com/fontsource/font-files/tree/5a72889057f592bb0659629e38337359f94d53b2/fonts/variable/eb-garamond ; upstream https://github.com/google/fonts/tree/main/ofl/ebgaramond | SIL Open Font License 1.1 | Copyright 2017 The EB Garamond Project Authors; see `src/assets/fonts/OFL-EB-Garamond.txt` | 2026-11-18 | Display typography; self-hosted WOFF2 |
+| Inter variable (Latin) | https://github.com/fontsource/font-files/tree/5a72889057f592bb0659629e38337359f94d53b2/fonts/variable/inter ; upstream https://github.com/google/fonts/tree/main/ofl/inter | SIL Open Font License 1.1 | Copyright 2020 The Inter Project Authors; see `src/assets/fonts/OFL-Inter.txt` | 2026-11-18 | Body and interface typography; self-hosted WOFF2 |
+
+No third-party components, icons, illustrations, textures or 3D models have been added. Interface icons are inline SVG.
