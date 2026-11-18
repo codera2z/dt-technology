@@ -1,0 +1,123 @@
+.service-row { position: relative; isolation: isolate; overflow: hidden; grid-template-columns: 76px 180px minmax(0, 1fr) 40px; gap: clamp(16px, 2.6vw, 34px); background: transparent; transition: transform .65s var(--lux-ease), border-color .3s var(--lux-ease); }
+.service-row::before, .service-row::after { content: ""; position: absolute; pointer-events: none; }
+.service-row::before { z-index: 0; inset: 0; opacity: 0; background: radial-gradient(300px circle at var(--spotlight-x, 50%) var(--spotlight-y, 50%), rgba(250,245,236,.86), transparent 76%); transition: opacity .35s var(--lux-ease); }
+.service-row::after { right: 0; bottom: -1px; left: 0; height: 1px; background: var(--terracotta); transform: scaleX(0); transform-origin: left; transition: transform .7s var(--lux-ease); }
+.service-row > * { z-index: 1; }
+.service-row__number, .service-row__illustration, .service-row__copy, .service-row__arrow { position: relative; opacity: 0; transform: translateY(12px); transition: opacity .65s var(--lux-ease), transform .7s var(--lux-ease), color .3s var(--lux-ease); }
+.service-row__number { color: var(--muted); transition-delay: .05s; }
+.service-row__illustration { transition-delay: .11s; }
+.service-row__copy { transition-delay: .17s; }
+.service-row__arrow { transition-delay: .23s; }
+.service-row.has-revealed > * { opacity: 1; transform: translateY(0); }
+.service-row.has-revealed::after { transform: scaleX(1); }
+.service-row__illustration { width: 100%; max-width: 180px; }
+.service-illustration { display: block; width: 100%; height: auto; overflow: visible; color: var(--terracotta); }
+.service-illustration * { animation-play-state: paused; }
+.service-art__frame { fill: rgba(250,245,236,.34); stroke: rgba(42,31,26,.13); stroke-width: 1; }
+.service-art__baseline, .service-art__window-line, .service-art__web-line,
+.service-art__device-line, .service-art__chat-line, .service-art__layer-line { fill: none; stroke: rgba(42,31,26,.36); stroke-width: 1.5; stroke-linecap: round; }
+.service-art__route, .service-art__network, .service-art__connection, .service-art__cycle { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.service-art__route { stroke-dasharray: 330; stroke-dashoffset: 330; animation: service-draw 1.6s .2s ease forwards; }
+.service-art__milestone { fill: var(--panel); stroke: currentColor; stroke-width: 2; }
+.service-art__milestone--last { fill: currentColor; }
+.service-art__bar { fill: rgba(196,98,45,.3); transform-box: fill-box; transform-origin: center bottom; transform: scaleY(.12); animation: service-grow .8s ease-out forwards; }
+.service-art__bar--two { animation-delay: .18s; }
+.service-art__bar--three { animation-delay: .34s; }
+.service-art__window, .service-art__device, .service-art__chat { fill: rgba(250,245,236,.82); stroke: rgba(42,31,26,.34); stroke-width: 1.3; }
+.service-art__window { transform-origin: 96px 68px; }
+.service-art__device { transform-origin: 170px 85px; }
+.service-art__window-dot { fill: var(--terracotta); opacity: .72; }
+.service-art__web-block { fill: rgba(196,98,45,.16); stroke: rgba(196,98,45,.6); stroke-width: 1; }
+.service-art__cursor { fill: var(--terracotta); stroke: var(--paper); stroke-width: 1.3; transform-box: fill-box; transform-origin: center; animation: service-cursor 2.6s .7s ease-in-out infinite; }
+.service-art__click { fill: rgba(196,98,45,.12); stroke: currentColor; stroke-width: 1; opacity: 0; transform-box: fill-box; transform-origin: center; animation: service-click 2.6s 1.2s ease-in-out infinite; }
+.service-art__counter { fill: currentColor; font: 600 8px Inter, sans-serif; letter-spacing: 1px; }
+.service-art__network { stroke-dasharray: 210; stroke-dashoffset: 210; animation: service-draw 1.8s .1s ease forwards; }
+.service-art__node { fill: var(--panel); stroke: currentColor; stroke-width: 1.7; transform-box: fill-box; transform-origin: center; translate: var(--pull-x, 0px) var(--pull-y, 0px); transition: translate .35s var(--lux-ease); animation: service-pulse 3.2s ease-in-out infinite; }
+.service-art__node:nth-of-type(2n) { animation-delay: .45s; }
+.service-art__chat { fill: rgba(250,245,236,.92); }
+.service-art__chat-tail { fill: rgba(250,245,236,.92); stroke: rgba(42,31,26,.34); stroke-width: 1; }
+.service-art__chat-line { transform-box: fill-box; transform-origin: left; transform: scaleX(0); animation: service-type .65s ease-out forwards; }
+.service-art__chat-line--two { animation-delay: .24s; }
+.service-art__sparkle { fill: var(--terracotta); transform-box: fill-box; transform-origin: center; animation: service-sparkle 2.8s ease-in-out infinite; }
+.service-art__tile { fill: rgba(250,245,236,.8); stroke: rgba(42,31,26,.26); stroke-width: 1.2; }
+.service-art__tile-mark { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.service-art__connection { stroke-dasharray: 7 8; stroke-dashoffset: 30; animation: service-flow 2.4s linear infinite; }
+.service-art__hub { fill: rgba(196,98,45,.14); stroke: currentColor; stroke-width: 1.4; }
+.service-art__gear { fill: var(--terracotta); transform-box: fill-box; transform-origin: center; animation: service-spin 12s .65s linear infinite; }
+.service-art__gear circle { fill: var(--panel); }
+.service-art__pulse { fill: var(--terracotta); opacity: 0; transform-box: fill-box; transform-origin: center; }
+.service-art__pulse--one { animation: service-flow-one 2.8s 1s ease-in-out infinite; }
+.service-art__pulse--two { animation: service-flow-two 2.8s 1s ease-in-out infinite; }
+.service-art__cycle { stroke-dasharray: 220; stroke-dashoffset: 220; animation: service-draw 1.7s .2s ease forwards; }
+.service-art__cycle-arrow { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.service-art__layer { fill: rgba(250,245,236,.93); stroke: rgba(42,31,26,.34); stroke-width: 1.2; }
+.service-art__layer--back { fill: rgba(196,98,45,.12); }
+.service-art__layer--front { transform: none; }
+.service-art__orbit-node { fill: var(--terracotta); transform-box: fill-box; transform-origin: center; animation: service-pulse 3.6s ease-in-out infinite; }
+.service-row.is-visible .service-art__click,
+.service-row.is-visible .service-art__cursor,
+.service-row.is-visible .service-art__route,
+.service-row.is-visible .service-art__network,
+.service-row.is-visible .service-art__connection,
+.service-row.is-visible .service-art__cycle,
+.service-row.is-visible .service-art__bar,
+.service-row.is-visible .service-art__chat-line,
+.service-row.is-visible .service-art__gear,
+.service-row.is-visible .service-art__pulse,
+.service-row.is-visible .service-art__node,
+.service-row.is-visible .service-art__sparkle,
+.service-row.is-visible .service-art__orbit-node { animation-play-state: running; }
+.service-row.is-visible .service-art__window { animation: service-arrive .8s .1s var(--lux-ease) both; }
+.service-row.is-visible .service-art__device { animation: service-arrive .8s .35s var(--lux-ease) both; }
+.service-row.is-visible .service-art__layer--front { animation: service-lift .9s .35s var(--lux-ease) both; }
+.service-row:hover::before, .service-row:focus-within::before, .service-row:active::before { opacity: 1; }
+.service-row:hover::after, .service-row:focus-within::after, .service-row:active::after { transform: scaleX(1); }
+.service-row:hover .service-row__number, .service-row:focus-within .service-row__number, .service-row:active .service-row__number { color: var(--terracotta); }
+.service-row__arrow { color: var(--terracotta); opacity: 0; transform: translate(-7px, 12px); }
+.service-row.has-revealed .service-row__arrow { opacity: .65; transform: translateX(-7px); }
+.service-row:hover .service-row__arrow, .service-row:focus-within .service-row__arrow, .service-row:active .service-row__arrow { opacity: 1; transform: translateX(0); }
+@keyframes service-draw { to { stroke-dashoffset: 0; } }
+@keyframes service-grow { to { transform: scaleY(1); } }
+@keyframes service-type { to { transform: scaleX(1); } }
+@keyframes service-arrive { from { opacity: .55; transform: scale(.88); } to { opacity: 1; transform: scale(1); } }
+@keyframes service-cursor { 0%,100% { transform: translate(0,0); } 50% { transform: translate(-5px,5px); } }
+@keyframes service-click { 0%,42%,100% { opacity: 0; transform: scale(.4); } 54% { opacity: .8; transform: scale(1); } 68% { opacity: 0; transform: scale(1.6); } }
+@keyframes service-pulse { 0%,100% { opacity: .72; transform: scale(.92); } 50% { opacity: 1; transform: scale(1.12); } }
+@keyframes service-sparkle { 0%,100% { opacity: .55; transform: scale(.82) rotate(0); } 50% { opacity: 1; transform: scale(1.13) rotate(22deg); } }
+@keyframes service-flow { to { stroke-dashoffset: -30; } }
+@keyframes service-flow-one { 0% { opacity: 0; transform: translate(0,0); } 30%,75% { opacity: 1; } 100% { opacity: 0; transform: translate(49px,23px); } }
+@keyframes service-flow-two { 0% { opacity: 0; transform: translate(0,0); } 30%,75% { opacity: 1; } 100% { opacity: 0; transform: translate(49px,-18px); } }
+@keyframes service-spin { to { transform: rotate(360deg); } }
+@keyframes service-lift { to { transform: translateY(0); } }
+@media (max-width: 900px) {
+  .service-row { grid-template-columns: 52px 140px minmax(0, 1fr) 28px; gap: 18px; }
+  .service-row__illustration { max-width: 140px; }
+}
+@media (max-width: 720px) {
+  .service-row { grid-template-columns: 34px minmax(0,1fr) 78px 18px; gap: 8px; padding: 22px 2px; }
+  .service-row__illustration { grid-column: 3; grid-row: 1; width: 78px; align-self: center; }
+  .service-row__number { grid-column: 1; grid-row: 1; align-self: start; padding-top: 4px; font-size: 9px; }
+  .service-row__copy { grid-column: 2; grid-row: 1; align-self: center; }
+  .service-row h3 { font-size: 22px; }
+  .service-row p { font-size: 11px; line-height: 1.6; }
+  .service-row__arrow { grid-column: 4; grid-row: 1; align-self: center; font-size: 20px; }
+  .service-row.has-revealed .service-row__arrow { opacity: .75; transform: none; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .service-row:hover { background: transparent; }
+  .service-row:hover .service-row__illustration { transform: translateY(-2px) scale(1.025); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .service-row, .service-row::before, .service-row::after,
+  .service-row__number, .service-row__illustration, .service-row__copy, .service-row__arrow {
+    opacity: 1; transform: none; transition: none;
+  }
+  .service-row::before { display: none; }
+  .service-row::after { transform: none; }
+  .service-illustration * { animation: none !important; }
+  .service-art__route, .service-art__network, .service-art__connection, .service-art__cycle { stroke-dashoffset: 0; }
+  .service-art__bar { transform: scaleY(1); }
+  .service-art__chat-line { transform: scaleX(1); }
+  .service-art__layer--front { transform: none; }
+  .service-art__node { translate: none !important; }
+}

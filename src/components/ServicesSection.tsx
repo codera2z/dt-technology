@@ -1,14 +1,32 @@
-const services = [
-  ["Product Strategy & Budget Planning",
-    "Shape the idea, set priorities and plan a realistic first release and budget."],
-  ["Websites & Web Applications",
-    "Websites and web applications designed around what your customers need to do."],
-  ["AI & GenAI Solutions",
-    "Add practical AI features, assistants and knowledge tools to products and workflows."],
-  ["Automation & Integration",
-    "Connect the tools you use and reduce repetitive, manual work."],
-  ["Product Engineering & Lifecycle",
-    "Build, launch, maintain and improve the product as needs change."],
+import { ServiceRow } from "./ServiceRow";
+import type { ServiceKind } from "./ServiceIllustration";
+
+const services: { title: string; description: string; kind: ServiceKind }[] = [
+  {
+    title: "Product Strategy & Budget Planning",
+    description: "Shape the idea, set priorities and plan a realistic first release and budget.",
+    kind: "strategy",
+  },
+  {
+    title: "Websites & Web Applications",
+    description: "Websites and web applications designed around what your customers need to do.",
+    kind: "web",
+  },
+  {
+    title: "AI & GenAI Solutions",
+    description: "Add practical AI features, assistants and knowledge tools to products and workflows.",
+    kind: "ai",
+  },
+  {
+    title: "Automation & Integration",
+    description: "Connect the tools you use and reduce repetitive, manual work.",
+    kind: "automation",
+  },
+  {
+    title: "Product Engineering & Lifecycle",
+    description: "Build, launch, maintain and improve the product as needs change.",
+    kind: "lifecycle",
+  },
 ];
 
 export function ServicesSection() {
@@ -27,17 +45,8 @@ export function ServicesSection() {
         </p>
       </div>
       <div className="service-list">
-        {services.map(([title, description], index) => (
-          <article className="service-row" key={title}>
-            <span className="service-row__number">
-              [ {String(index + 1).padStart(2, "0")} ]
-            </span>
-            <div className="service-row__copy">
-              <h3>{title}</h3>
-              <p>{description}</p>
-            </div>
-            <span className="service-row__arrow" aria-hidden="true">↗</span>
-          </article>
+        {services.map((service, index) => (
+          <ServiceRow key={service.title} {...service} index={index} />
         ))}
       </div>
     </section>
