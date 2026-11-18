@@ -17,6 +17,8 @@ export function ServiceRow({ title, description, kind, index }: ServiceRowProps)
   const rowRef = useRef<HTMLElement | null>(null);
   const [inView, setInView] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const pointerFrame = useRef<number | null>(null);
+  const pendingPointer = useRef<{ element: HTMLElement; x: number; y: number } | null>(null);
 
   useEffect(() => {
     const row = rowRef.current;
@@ -37,30 +39,49 @@ export function ServiceRow({ title, description, kind, index }: ServiceRowProps)
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => () => {
+    if (pointerFrame.current !== null) window.cancelAnimationFrame(pointerFrame.current);
+  }, []);
+
   const moveSpotlight = (event: PointerEvent<HTMLElement>) => {
     if (event.pointerType !== "mouse" || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    const bounds = event.currentTarget.getBoundingClientRect();
-    const x = ((event.clientX - bounds.left) / bounds.width) * 100;
-    const y = ((event.clientY - bounds.top) / bounds.height) * 100;
-    event.currentTarget.style.setProperty("--spotlight-x", x + "%");
-    event.currentTarget.style.setProperty("--spotlight-y", y + "%");
-    if (kind === "ai") {
-      const artwork = event.currentTarget.querySelector<SVGSVGElement>(".service-illustration--ai");
-      if (artwork) {
-        const artBounds = artwork.getBoundingClientRect();
-        const pointerX = ((event.clientX - artBounds.left) / artBounds.width) * 220;
-        const pointerY = ((event.clientY - artBounds.top) / artBounds.height) * 132;
-        artwork.querySelectorAll<SVGCircleElement>(".service-art__node").forEach((node, index) => {
-          const point = aiNodePoints[index];
-          if (!point) return;
-          node.style.setProperty("--pull-x", clampPull((pointerX - point[0]) * .035) + "px");
-          node.style.setProperty("--pull-y", clampPull((pointerY - point[1]) * .035) + "px");
-        });
+    pendingPointer.current = {
+      element: event.currentTarget,
+      x: event.clientX,
+      y: event.clientY,
+    };
+    if (pointerFrame.current !== null) return;
+    pointerFrame.current = window.requestAnimationFrame(() => {
+      pointerFrame.current = null;
+      const pending = pendingPointer.current;
+      if (!pending) return;
+      const { element, x: clientX, y: clientY } = pending;
+      const bounds = element.getBoundingClientRect();
+      const x = ((clientX - bounds.left) / bounds.width) * 100;
+      const y = ((clientY - bounds.top) / bounds.height) * 100;
+      element.style.setProperty("--spotlight-x", x + "%");
+      element.style.setProperty("--spotlight-y", y + "%");
+      if (kind === "ai") {
+        const artwork = element.querySelector<SVGSVGElement>(".service-illustration--ai");
+        if (artwork) {
+          const artBounds = artwork.getBoundingClientRect();
+          const pointerX = ((clientX - artBounds.left) / artBounds.width) * 220;
+          const pointerY = ((clientY - artBounds.top) / artBounds.height) * 132;
+          artwork.querySelectorAll<SVGCircleElement>(".service-art__node").forEach((node, index) => {
+            const point = aiNodePoints[index];
+            if (!point) return;
+            node.style.setProperty("--pull-x", clampPull((pointerX - point[0]) * .035) + "px");
+            node.style.setProperty("--pull-y", clampPull((pointerY - point[1]) * .035) + "px");
+          });
+        }
       }
-    }
+    });
   };
 
   const resetSpotlight = (event: PointerEvent<HTMLElement>) => {
+    if (pointerFrame.current !== null) window.cancelAnimationFrame(pointerFrame.current);
+    pointerFrame.current = null;
+    pendingPointer.current = null;
     event.currentTarget.style.setProperty("--spotlight-x", "50%");
     event.currentTarget.style.setProperty("--spotlight-y", "50%");
     event.currentTarget.querySelectorAll<SVGCircleElement>(".service-art__node").forEach((node) => {
