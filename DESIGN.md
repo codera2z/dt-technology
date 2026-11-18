@@ -1,33 +1,32 @@
 # DT Technology — Design and interaction specification
 
-**Status:** Current owner brief, 18 Nov 2026. The attached Stitch HTML is a visual reference only; do not copy its implementation or simple CSS animation loops.
+**Status:** Current owner brief, 18 Nov 2026. Stitch HTML is a visual reference only; do not copy its implementation or simple CSS animation loops.
 
 ## Site and identity
-One responsive scrolling page at `/`, with only Hero, Services and Contact. No footer. Header contains the DT wordmark/company name and exactly two links: Services and Contact. Use the square-bracket motif selectively in the wordmark and section labels.
+One responsive scrolling page at /, with Hero, Services and Contact only. No footer. Header contains DT wordmark/company name and exactly two links: Services and Contact. Use the square-bracket motif selectively.
 
 ## Art direction
-Refined, cinematic, warm and expensive. Calm, cohesive motion; no gimmicks, neon, generic AI gradients or agency-template layouts.
+Refined, cinematic, warm and expensive. Calm, cohesive motion; no gimmicks, neon, generic AI gradients or template-like layouts.
 
 | Token | Value |
 |---|---|
-| Cream canvas | `#FAF5EC` |
-| Cream surface | `#F3E9D8` |
-| Espresso | `#2A1F1A` |
-| Terracotta | `#C4622D` |
+| Cream canvas | #FAF5EC |
+| Cream surface | #F3E9D8 |
+| Espresso | #2A1F1A |
+| Terracotta | #C4622D |
 
-Typography: self-host EB Garamond for display and Inter for body/interface. Both variable WOFF2 fonts and their OFL notices are in `src/assets/fonts/`. No remote font requests, CDN or external scripts. Use inline SVG icons, not Material Symbols.
+Self-host EB Garamond for display and Inter for body/interface. Variable WOFF2 files and OFL notices are in src/assets/fonts/. No remote font requests, CDNs or external scripts. Use inline SVG icons, not Material Symbols.
 
 ## Honest content
-Positioning: **AI-accelerated, engineer-accountable.** Speak to startups and growing businesses in plain language; established/enterprise organisations may also be welcomed. No invented clients, products, case studies, testimonials, logos, statistics, credentials, awards, locations, response-time promises, delivery guarantees or technical-stack claims. Keep every public claim supportable.
+Positioning: **AI-accelerated, engineer-accountable.** Speak plainly to startups and growing businesses; larger organisations are welcome. Do not invent or imply clients, products, case studies, testimonials, logos, metrics, credentials, awards, locations, response-time promises, guarantees or technical-stack claims.
 
 ## Hero
-Headline structure: **Build what matters. Then [scale / ship / grow / launch].** Cycle the italic accent word through those four words with a masked slide. Reveal the headline word-by-word from blur to sharp. Primary CTA: **Discuss Your Project**; secondary link: **Explore services**.
-
-- Mobile: fit the hero into one phone screen. The animation is a dimmed full-bleed backdrop behind centred text, never a block stacked below it.
+Headline: **Build what matters. Then [scale / ship / grow / launch].** Cycle the italic accent through those words with a masked slide; reveal headline words from blur to sharp. Primary CTA: **Discuss Your Project**; secondary: **Explore services**.
+- Mobile: fit within one phone screen. Animation is a dimmed full-bleed backdrop behind centred text, never stacked below.
 - Desktop: text left, animation right.
-- Create an original luminous generative centerpiece: layered mesh/lines/particles with at least three depth/parallax layers, slow morph/breath, restrained light sweep and shimmer. Respond smoothly to desktop cursor; on touch, drift or respond to scroll.
-- Opening: square brackets slide in to frame “DT”, followed by a restrained staggered page reveal.
-- CTA: restrained magnetic primary button with inner glow and sliding arrow; secondary animated underline.
+- Original luminous generative centerpiece: at least three parallax/depth layers of mesh, lines and particles; slow morph/breath; restrained light sweep/shimmer. Respond smoothly to desktop cursor; drift or respond to scroll on touch.
+- Opening: brackets slide in to frame “DT”, then page reveals with a restrained stagger.
+- Primary CTA: magnetic with inner glow and sliding arrow. Secondary: animated underline.
 
 ## Marquee
 Repeat only these five services, separated by small dots:
@@ -36,42 +35,34 @@ Repeat only these five services, separated by small dots:
 3. AI & GenAI Solutions
 4. Automation & Integration
 5. Product Engineering & Lifecycle
-
-Scroll velocity may subtly alter marquee speed/direction. Do not insert additional words or promotional phrases.
+Scroll velocity may subtly affect speed/direction. No extra promotional phrases.
 
 ## Services
-Section label: **[ 01 ] Services**. Intro copy must be plain and confident: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; make clear larger organisations are welcome without using enterprise jargon.
-
-Five editorial rows, each with a distinct original illustration:
-1. **Product Strategy & Budget Planning:** roadmap path draws across milestone nodes; budget bars grow/rebalance; small counter.
-2. **Websites & Web Applications:** browser wireframe assembles; morph between desktop/tablet/phone; cursor moves and clicks a button.
-3. **AI & GenAI Solutions:** node network responds to nearby cursor with gentle attraction/connections; short chat response types token by token; completion sparkle.
-4. **Automation & Integration:** app tiles connect by curves; pulses travel to a central hub; gear engages on arrival.
+Label: **[ 01 ] Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
+Five rows with distinct original illustrations:
+1. **Strategy & Budget:** roadmap path and milestones draw; allocation bars grow/rebalance; small counter.
+2. **Websites & Web Applications:** browser wireframe assembles, morphs desktop/tablet/phone; cursor moves and clicks.
+3. **AI & GenAI:** node network gently attracts/connects near cursor; short chat reply types token by token; completion sparkle.
+4. **Automation & Integration:** app tiles connect by curves; pulses travel to hub; gear engages on arrival.
 5. **Product Engineering & Lifecycle:** build → ship → improve cycle; orbiting nodes, progress arc and lifting/settling layers.
-
-Rows reveal only when scrolled into view—never pre-apply the visible state. Hairline draws, copy staggers upward, index turns terracotta on hover, arrow slides in, and a soft cursor spotlight follows desktop pointer. On mobile use compact illustrations. Support hover and tap; pause idle motion offscreen. Use a clear static/reduced-motion state.
+Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause loops offscreen; provide static/reduced-motion alternatives.
 
 ## Contact and submission
-Section label: **[ 02 ] Contact**. Change “Direct Line” to **Email us**. Use an approachable invitation, heading word reveal and restrained accent shimmer. Add subtle grid/dot texture and a slowly travelling border light around the form.
+Label: **[ 02 ] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
+Exact labels: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Neutral placeholders. Floating labels and expanding terracotta focus underline. Magnetic/shimmer submit button. States: loading/spinner, success with palette-matched particles and confirmation, error with gentle shake.
+Keep form submission in src/lib/submitContact.ts behind submitContact(data). Web3Forms uses import.meta.env.VITE_WEB3FORMS_KEY, a hidden honeypot and client validation. Keep provider logic isolated so an AWS swap needs only this module and its env configuration. Never commit a real key or fake success.
 
-Labels must be exactly: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Use neutral placeholders. Focus styling uses floating labels and an expanding terracotta underline. Submit button: restrained magnetic hover and shimmer. States: loading/spinner, success with palette-matched particle feedback and confirmation, error with a gentle shake.
-
-Keep all form submission orchestration/transport in `src/lib/submitContact.ts`, behind `submitContact(data)`. Use Web3Forms with `import.meta.env.VITE_WEB3FORMS_KEY`, a hidden honeypot and client-side validation. Keep the provider boundary isolated so a future AWS endpoint swap requires changes only in this module and its environment configuration. Never put a real key in Git. Do not fake success.
-
-**Email caveat:** `hello@dttechnology.com` currently appears in the prototype because it was in the Stitch reference; it is unverified. Confirm the address before public launch.
+**Email caveat:** hello@dttechnology.com came from Stitch and is unverified; confirm before public launch.
 
 ## Global motion, accessibility and performance
-Use installed Motion, CSS, inline SVG and small canvas only where useful; add no dependency without approval. Write original animation choreography, not the Stitch CSS loops. Use a coherent ease such as `cubic-bezier(0.16, 1, 0.3, 1)`.
+Use installed Motion, CSS, inline SVG and small canvas only where useful. No new dependencies without approval. Write original motion, not the Stitch loops. Consistent ease, e.g. cubic-bezier(0.16, 1, 0.3, 1).
+Smooth in-page navigation, active-section indication, thin terracotta progress and header opacity/shadow on scroll. Section headings need scroll-margin-top. Throttle desktop pointer effects; disable on touch; pause offscreen; reduce mobile complexity. Prefer transform/opacity when practical.
+One h1, semantic landmarks, logical headings, visible focus, keyboard access, AA contrast, 44px targets and 12px labels. Respect prefers-reduced-motion. No horizontal overflow at 375, 768, 1024 or 1440px. Essential content must not depend on animation.
 
-Add smooth in-page navigation, active-section indication, thin terracotta scroll progress and a header that gains opacity/shadow after scrolling. Add `scroll-margin-top` so section headings clear the fixed header. Animate transform/opacity where practical; throttle desktop pointer effects, disable them on touch, pause loops offscreen and reduce effect complexity on mobile.
-
-One h1, semantic landmarks, correct heading order, visible focus, keyboard access, AA contrast, targets at least 44px and labels at least 12px. Respect `prefers-reduced-motion` with useful static alternatives. No horizontal overflow at 375, 768, 1024 or 1440px. Never hide essential information in animation.
-
-## Delivery sequence
-1. Fixes, content cleanup, header and hero layout.
+## Delivery and review
+1. Fixes, content, header and hero layout — provisionally accepted in the owner's preview.
 2. Original hero animation.
 3. Five service illustrations and in-view interactions.
 4. Contact form, validation and Web3Forms submission.
-5. Global polish, responsive, accessibility and performance QA.
-
-After each commit, give exact local commands/checks and wait for the owner's build output and screenshots before proceeding. Current commit-1 implementation and review status are in HANDOFF.md.
+5. Global polish, responsive, accessibility and performance review.
+Proceed through design commits without requesting build logs/screenshots between each one. Use sound responsive judgment and review the code at each breakpoint. The owner may provide preview feedback at any time. After commit 5, provide one consolidated local build and QA checklist with exact commands. Never claim checks passed until the owner runs them.
