@@ -12,7 +12,8 @@
   display: inline-block;
   position: relative;
   width: auto;
-  overflow: hidden;
+  overflow: visible;
+  clip-path: inset(-.18em 0 -.26em);
   vertical-align: baseline;
   line-height: inherit;
   padding-bottom: .12em;
@@ -33,7 +34,8 @@
   white-space: nowrap;
   will-change: transform, filter;
 }
-.hero-accent { position: absolute; top: 0; left: 0; }
+.hero-accent { position: absolute; top: .15em; left: 0; }
+.hero-accent-static { position: relative; top: .15em; }
 .hero-accent--sizer, .hero-accent--measure { position: static; visibility: hidden; will-change: auto; }
 .hero-title__measure {
   position: absolute;
