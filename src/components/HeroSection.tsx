@@ -42,7 +42,7 @@ export function HeroSection() {
             </span>
             <span className="hero-title__line">
               <motion.span variants={wordReveal}>Then</motion.span>{" "}
-              <CyclingAccent />.
+              <CyclingAccent />
             </span>
           </motion.h1>
           <motion.p className="hero-description" initial={reduceMotion ? false : { opacity: 0, y: 14 }}
