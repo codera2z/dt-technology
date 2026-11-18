@@ -35,6 +35,7 @@
   will-change: transform, filter;
 }
 .hero-accent { position: absolute; top: .04em; left: 0; }
+.hero-accent--grow { padding-left: .105em; }
 .hero-accent-static { position: relative; top: .04em; }
 .hero-accent--sizer, .hero-accent--measure { position: static; visibility: hidden; will-change: auto; }
 .hero-title__measure {
