@@ -88,7 +88,7 @@
 @keyframes service-flow-one { 0% { opacity: 0; transform: translate(0,0); } 30%,75% { opacity: 1; } 100% { opacity: 0; transform: translate(49px,23px); } }
 @keyframes service-flow-two { 0% { opacity: 0; transform: translate(0,0); } 30%,75% { opacity: 1; } 100% { opacity: 0; transform: translate(49px,-18px); } }
 @keyframes service-spin { to { transform: rotate(360deg); } }
-@keyframes service-lift { to { transform: translateY(0); } }
+@keyframes service-lift { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 @media (max-width: 900px) {
   .service-row { grid-template-columns: 52px 140px minmax(0, 1fr) 28px; gap: 18px; }
   .service-row__illustration { max-width: 140px; }
