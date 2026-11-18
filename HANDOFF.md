@@ -1,10 +1,10 @@
-# HANDOFF v9 | date: 2026-11-18 | last code commit: b48ecd9
+# HANDOFF v10 | date: 2026-11-18 | last code commit: 88e6bbe
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
 ## Phase and next step
 - Phase: Build — commits 1 and 2 plus hero feedback corrections are committed.
-- Next: Await owner approval of accent spacing, then commit 3 (five service illustrations and in-view interactions). Final local build and responsive/accessibility checks remain deferred.
+- Next: Owner to review headline alignment and initial reveal; after approval, commit 3 (five service illustrations and in-view interactions). Final local build and responsive/accessibility checks remain deferred.
 
 ## Approved
 - Existing stack: Vite 8.3.8, React 19.3.1, TypeScript 6.0.3, Tailwind CSS 4.3.5, Motion 14.14.0. No new dependencies.
@@ -21,11 +21,11 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - Commit 1: header/hero shell, service marquee/copy shell, contact intro, palette, self-hosted licensed fonts and scroll offsets. Preview provisionally accepted.
 - Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
 - Hero scene refinement f3d4d5c: richer globe mesh/depth, orbit rings, satellites, particles, highlight and light sweep.
-- Accent correction b48ecd9: measure each word in EB Garamond and animate mask width to match. Period stays outside the mask and moves naturally with the word.
-- Owner's 08:27 screenshot was inspected; it showed a large fixed gap before the period.
+- Accent spacing correction b48ecd9: measure each word in EB Garamond and animate slot width; period moves with it.
+- Current headline correction: animated word slot uses an invisible in-flow sizing word to share the exact text baseline; the slot now has its own delayed blur/slide entrance, while later word changes retain AnimatePresence transitions.
 
 ## In progress / not verified
-- Dynamic-width accent awaits owner preview approval.
+- Latest headline baseline and initial entrance correction awaits owner preview.
 - Service illustrations, contact form/submission and global polish remain.
 - No local build or breakpoint QA has been reported.
 
