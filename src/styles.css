@@ -2,6 +2,7 @@
 @import "./styles/tokens.css";
 @import "./styles/site-header.css";
 @import "./styles/hero.css";
+@import "./styles/marquee.css";
 @import "./styles/sections.css";
 @import "./styles/hero-motion.css";
 @import "./styles/services-motion.css";

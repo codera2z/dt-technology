@@ -1,0 +1,32 @@
+@media (min-width: 721px) {
+  .hero-section {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) auto;
+    height: calc(100svh - var(--header-height));
+    min-height: 0;
+  }
+  .hero-layout {
+    min-height: 0;
+    margin: 0 auto;
+  }
+}
+
+.service-marquee { flex: none; }
+.service-marquee__track {
+  animation: service-marquee-right 48s linear infinite;
+  will-change: transform;
+}
+.service-marquee__set { flex: none; }
+
+@keyframes service-marquee-right {
+  from { transform: translate3d(-50%, 0, 0); }
+  to { transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-marquee__track {
+    animation: none;
+    transform: translate3d(-50%, 0, 0);
+    will-change: auto;
+  }
+}

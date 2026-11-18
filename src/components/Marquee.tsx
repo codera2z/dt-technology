@@ -12,12 +12,10 @@ export function Marquee() {
       <div className="service-marquee__track">
         {[0, 1].map((copy) => (
           <div className="service-marquee__set" key={copy} aria-hidden={copy === 1}>
-            {services.map((service, index) => (
+            {services.map((service) => (
               <span className="service-marquee__item" key={service}>
                 {service}
-                {index < services.length - 1 && (
-                  <span className="service-marquee__dot" aria-hidden="true" />
-                )}
+                <span className="service-marquee__dot" aria-hidden="true" />
               </span>
             ))}
           </div>
