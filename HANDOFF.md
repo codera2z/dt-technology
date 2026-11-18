@@ -1,51 +1,38 @@
-# HANDOFF v4 | date: 2026-11-17 | last commit: 6a5f346
+# HANDOFF v5 | date: 2026-11-18 | last code commit: 29f37cd
 
-Rules for this file: overwrite the whole file each time (never append). Max 350 words. Keep this template. Keep only what a brand-new chat needs.
+Rules: overwrite this file completely, never append; keep this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: 3 (Component sourcing)
-- Next: Owner brings component code / references. Inspect dependencies, licence, fit, accessibility and performance before adapting. Then Phase 4: build one section per chat.
+- Phase: Build — commit 1 of 5 is in Git; local review is pending.
+- Next: Owner runs the build and checks 375px and 1440px screenshots. Fix commit 1 issues first; then begin commit 2 (hero animation).
 
-## Approved (wording is final)
-- Stack: Vite 8.3.8 + React 19.3.1 + TypeScript 6.0.3 + Tailwind CSS 4.3.5 using @tailwindcss/vite 4.3.5 + Motion 14.14.0.
-- Retain GSAP 3.15.1, @gsap/react 2.1.2 and Three.js 0.187.0 as optional design tools; add/remove dependencies as design requires, with approval for new dependencies.
-- shadcn/ui primitives may be used selectively when needed.
-- Positioning: "AI-accelerated, engineer-accountable."
-- Blueprint: The Systems Studio; confident, precise, approachable; warm paper / graphite / signal lime; Space Grotesk headings + DM Sans body; product-system visual evolving through the scroll; one-page Hero, Services, Contact.
+## Approved
+- Existing stack: Vite 8.3.8, React 19.3.1, TypeScript 6.0.3, Tailwind CSS 4.3.5, Motion 14.14.0. No dependencies added.
+- Visual direction: warm cream / espresso / terracotta; EB Garamond display + Inter body; square-bracket identity.
+- Positioning: “AI-accelerated, engineer-accountable.”
 
 ## Locked decisions
-- Audience: India and international; all industries; small core team without publishing team size or technical skills.
-- Services: product strategy/budget planning, websites/web apps, AI/GenAI/RAG/LLM, automation/integrations, product engineering, deployment and maintenance.
-- Engagements: one-time projects, end-to-end partnerships, ongoing engineering, consulting.
-- Primary CTA: "Discuss Your Project"; header links: Services and Contact.
-- No existing logo found; develop wordmark and geometric DT monogram in implementation.
-- Scroll-jacking, pinned sequences, parallax and autoplaying 3D are allowed when purposeful; preserve navigation, content access, performance and reduced-motion alternatives.
-- One page at `/`; no footer. Contact form is UI only; no provider, hosting, domain or analytics.
-- Environment: Windows 11; Node 26.13.1, npm 11.20.0, Git 2.56.1.windows.1.
-
-## File map
-- AGENTS.md: standing rules; HANDOFF.md: current state; DESIGN.md: approved design system; LICENCES.md: third-party licence log.
-- package.json / package-lock.json: dependencies; vite.config.ts: Vite and Tailwind.
-- index.html: document shell; src/App.tsx: page; src/main.tsx: entry; src/styles.css: global styles.
+- One page: Hero, Services, Contact; no footer. Header has wordmark and only Services / Contact links.
+- Five real services and the animation / form requirements are specified in DESIGN.md.
+- No fabricated business claims or external/CDN assets. Contact form uses Web3Forms through src/lib/submitContact.ts and VITE_WEB3FORMS_KEY; no key in Git.
+- Contact email currently shown in code as hello@dttechnology.com came from the Stitch reference and is unverified; confirm before launch.
+- Windows 11; Node 26.13.1; npm 11.20.0; Git 2.56.1.windows.1.
 
 ## Done
-- Tailwind/Vite configured; owner confirmed install, build and dev server locally.
-- Removed duplicate src/package.json and stale tsconfig.tsbuildinfo; ignore future *.tsbuildinfo.
-- Phase 1 intake completed; Phase 2 Blueprint approved and recorded.
-- Font licences checked on their own files; self-hosting notices required.
+- Commit 1: responsive header and hero shell, static SVG scene, exact five-service marquee, service copy shell, contact intro shell, palette, self-hosted licensed fonts and section scroll offsets.
+- Updated DESIGN.md and LICENCES.md for the new brief. Full 838-line Stitch HTML reviewed.
 
-## In progress / open bugs
-- No components sourced and no UI implemented yet.
+## In progress / not verified
+- Owner has not yet reported local build output or screenshots. No service illustrations, generative hero animation, contact form or real submission flow implemented yet.
+- Only the Stitch HTML was attached; no separate screenshot files were present.
 
-## Rejected ideas
-- none
+## Rejected
+- Reusing Stitch CSS animation loops, Material Symbols, Google Fonts/Tailwind CDNs, footer, fake form success, unsupported claims.
 
-## Owner preferences learned
-- Explain technical steps plainly; owner makes final decisions. Use Windows 11 / PowerShell.
-- Do not publish team size, internal structure or individual technical skills.
-- Immersive scroll and autoplaying 3D are permitted when they add real value.
+## Owner preferences
+- Plain explanations; use Windows PowerShell. Owner makes final decisions. After each commit, give exact checks and wait for local screenshots/results.
 
-## Commands that work
-- npm install
+## Commands
 - npm run build
+- npm run typecheck
 - npm run dev

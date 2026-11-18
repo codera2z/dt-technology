@@ -1,40 +1,35 @@
-# AGENTS.md: DT Technology website
+# AGENTS.md — DT Technology
 
-Standing rules for any AI agent in this repo. Keep this file short. Current progress lives in HANDOFF.md, not here.
+Standing project and collaboration rules. Progress belongs only in HANDOFF.md; visual/content decisions belong in DESIGN.md.
 
-## Project
-One-page marketing site for DT Technology (websites and web apps, AI/GenAI, RAG and LLM integrations, automation, deployment and maintenance). One scrolling page at `/`. No footer. Header: logo/wordmark + company name + two links (Services, Contact). No other routes, blog, pricing, portfolio, testimonials or sections without the owner's explicit approval.
+## Product constraints
+- One responsive page at `/`: Hero, Services, Contact. No footer, extra pages or sections without owner approval.
+- Header: DT wordmark/company name and exactly two links: Services and Contact.
+- Positioning: **AI-accelerated, engineer-accountable.**
+- Audience: startups and growing businesses; larger organisations are welcome. Write plainly; avoid enterprise jargon.
+- Never invent or imply clients, products, case studies, testimonials, logos, metrics, credentials, awards, locations, response-time promises, delivery guarantees or other unsupported facts.
+- No public-facing technology-stack name-dropping.
 
-Scope now: an excellent site running locally. The Contact section is UI only (labels, validation, success and error states). Do not connect any service, add keys or paste third-party form code yet. Hosting, domain and analytics are later phases.
+## Stack and assets
+- Keep the existing Vite + React + TypeScript + Tailwind CSS v4 setup and installed dependencies. Motion is the animation library.
+- Do not add dependencies, especially heavy ones, unless the owner first approves the name, purpose, size, licence, simpler alternative and reason.
+- Build original motion with Motion, CSS, inline SVG and small canvas only where useful. Do not copy the Stitch file's CSS animation loops or import its implementation.
+- No CDNs, external scripts, trackers or remote font requests. Self-host fonts and preserve their licence notices. Use inline SVG for interface icons; no Material icon font.
+- No secrets or personal data in Git. Local environment files remain ignored; commit only a safe `.env.example`.
 
-## Content rules
-- No invented clients, logos, testimonials, case studies, statistics, credentials, awards or delivery claims.
-- Positioning line: "AI-accelerated, engineer-accountable."
-- Plain, specific service copy. No buzzword stacking.
-- The owner is not technical. Explain in plain language.
-
-## Stack
-Fresh project, no legacy code. Propose the simplest stack that can deliver a premium animated one-page site. The owner approves it ("APPROVED: stack"), and it is then recorded in HANDOFF.md.
-Preferred unless you can justify something better: Vite + React + TypeScript + Tailwind CSS v4 (official Vite plugin) + Motion for animation, with shadcn/ui primitives only where needed. Reason: most free component sources (React Bits, Magic UI, Aceternity UI, 21st.dev) are React + Tailwind. No router, backend or state library for a single page.
-Check official docs for current versions and the required Node version before giving any command. Use only scripts that exist in package.json. Propose one `check` script (type-check + lint + build) for approval.
-New dependencies need approval: name, purpose, size, licence, simpler alternative.
-
-## Code rules
-- Files under 150 lines. One component per file. Descriptive names.
-- Semantic HTML: one h1, correct heading order, landmarks, alt text, visible focus, everything keyboard operable, AA contrast.
-- Respect `prefers-reduced-motion`: every animation has a static or reduced-motion alternative.
-- Native scrolling is preferred, not mandatory. Scroll-driven interactions, scroll-jacking and immersive/autoplaying 3D scenes are allowed when they materially strengthen the story or layout. Use them deliberately; preserve user control, keyboard navigation, readable content and performance. Provide a meaningful static or reduced-motion alternative. Prefer transform and opacity for routine UI animation, but other effects are allowed when justified by the design.
-- Mobile first. Check widths 360, 390, 768, 1024, 1440.
-- No external scripts, CDNs or trackers. Fonts via package or self-hosted. Images sized, compressed, lazy-loaded below the fold.
-- No secrets in the repo. `.env` files stay git-ignored.
-- No lorem ipsum or TODO placeholders in committed code.
+## Code quality
+- Keep source files under 150 lines; one component per file, split complex illustrations and styles into focused files.
+- Read the complete current file before editing it. Never guess file contents or overwrite uninspected work.
+- Semantic HTML, one h1, logical headings, landmarks, visible focus, keyboard access, AA contrast and meaningful reduced-motion fallbacks are required.
+- All controls work by keyboard and touch; targets at least 44px, form labels at least 12px.
+- Pause section animations when offscreen. Disable cursor tracking on touch and reduced-motion devices. Prefer transform/opacity; reduce mobile effect complexity.
+- Avoid horizontal overflow at 375, 768, 1024 and 1440px.
 
 ## Workflow
-- Commit to main in small commits named `area: what changed`. Never force-push, rewrite history or delete files or branches without approval.
-- Read a file before editing it. Never guess its contents. Read only what the task needs.
-- Do not say something works until the owner confirms it from a local run. You cannot see the rendered page.
-- One section per task. Rewrite HANDOFF.md as its own rules say.
-- Check official docs before using a library feature. Cite the URL and version.
-
-## Third-party components and assets
-Log each one in LICENCES.md (source URL, licence checked on the item's own page, date, where used). Open LICENCES.md only when adding or changing one. If a licence is unclear, do not use the item.
+- Follow the five-commit sequence in DESIGN.md. One scoped commit per step, to `main`, with message `area: what changed`.
+- After each commit, provide exact commands and visible checks. Stop for the owner's local results and screenshots before starting the next step.
+- Use only scripts that exist in package.json. Current useful scripts: `npm run build`, `npm run typecheck`, `npm run dev`.
+- Never claim code builds or the page looks/works correctly until the owner reports the local result.
+- Never force-push, rewrite history or delete files/branches without explaining the risk and getting approval.
+- Check official documentation before using a library API; cite the URL and version when explaining it.
+- Log every third-party component/asset in LICENCES.md, checking the licence on its own source page. Do not use unclear licences.
