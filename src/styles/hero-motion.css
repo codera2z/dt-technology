@@ -8,20 +8,19 @@
 }
 .hero-title__line { display: block; }
 .hero-title__mask {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.15em;
+  display: inline-block;
+  position: relative;
+  width: auto;
   height: 1.24em;
-  margin-inline: -.12em;
-  padding-inline: .12em;
   overflow: hidden;
   vertical-align: -.19em;
   line-height: 1.08;
   white-space: nowrap;
+  transition: width .56s var(--lux-ease);
 }
 .hero-accent, .hero-accent-static {
   display: inline-block;
+  padding-inline: .045em;
   color: transparent;
   background: linear-gradient(105deg, #A94F26 0%, #C4622D 34%, #F0B18F 52%, #C4622D 72%, #A94F26 100%);
   background-size: 240% 100%;
@@ -32,6 +31,18 @@
   white-space: nowrap;
   will-change: transform, filter;
 }
+.hero-accent { position: absolute; inset: 0 auto auto 0; }
+.hero-title__measure {
+  position: absolute;
+  top: 0;
+  left: -10000px;
+  display: flex;
+  width: max-content;
+  visibility: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.hero-accent--measure { position: static; will-change: auto; }
 .button-primary { position: relative; overflow: hidden; box-shadow: 0 8px 24px rgba(196,98,45,.12); }
 .button-primary::before {
   content: "";
@@ -67,6 +78,6 @@
   .hero-title__mask { height: 1.22em; vertical-align: -.18em; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .button-primary::before, .button-secondary::after { transition: none; }
+  .button-primary::before, .button-secondary::after, .hero-title__mask { transition: none; }
   .hero-accent { will-change: auto; }
 }
