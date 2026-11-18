@@ -1,10 +1,10 @@
-# HANDOFF v8 | date: 2026-11-18 | last code commit: f3d4d5c
+# HANDOFF v9 | date: 2026-11-18 | last code commit: b48ecd9
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1 and 2 of 5 are complete; hero feedback pass committed.
-- Next: Commit 3 — five original service illustrations with scroll-triggered drawing, idle and hover/tap states. Defer local build and consolidated responsive/accessibility review until design work is complete.
+- Phase: Build — commits 1 and 2 plus hero feedback corrections are in progress/committed.
+- Next: Wait for owner approval of the hero accent spacing; then proceed to commit 3 (five service illustrations and in-view interactions). Final local build and responsive/accessibility checks remain deferred.
 
 ## Approved
 - Existing stack: Vite 8.3.8, React 19.3.1, TypeScript 6.0.3, Tailwind CSS 4.3.5, Motion 14.14.0. No dependencies added.
@@ -18,17 +18,16 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - hello@dttechnology.com came from Stitch and remains unverified; confirm before launch.
 
 ## Done
-- Commit 1: responsive header/hero shell, service marquee and copy shell, contact intro, palette, licensed self-hosted fonts and scroll offsets. Owner provisionally accepted preview.
+- Commit 1: responsive header/hero shell, service marquee/copy shell, contact intro, palette, licensed self-hosted fonts and scroll offsets. Owner provisionally accepted preview.
 - Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
-- Hero feedback pass f3d4d5c: enlarged accent safe-area and reserved width; richer sphere with front/back mesh, flowing contours, three instrumented orbit rings, satellites, connected particles, highlight and light sweep.
-- Owner feedback: cycling word was clipped; sphere looked too simple. Screenshot is in repo; connector could not render its PNG.
+- Hero scene refinement f3d4d5c: denser globe mesh, depth, orbit rings, satellites, connected particles, highlight and light sweep.
+- Accent correction b48ecd9: remove fixed-width gap; measure every word in the actual display font and animate the mask width to that word. Period remains outside the mask, so it naturally moves with the word.
+- Owner supplied two screenshots. The 08:27 screenshot was inspected and showed a large fixed gap before the period.
 
 ## In progress / not verified
-- Service illustrations/reveals, contact form/submission and global polish remain.
+- Owner has not yet approved the dynamic-width accent in preview.
+- Service illustrations, contact form/submission and global polish remain.
 - No local build or breakpoint QA has been reported.
-
-## Rejected
-- Stitch CSS loops, Material Symbols, Google Fonts/Tailwind CDNs, footer, fake form success and unsupported claims.
 
 ## Owner preferences
 - Plain explanations; Windows PowerShell. Use responsive judgment, without intermediate build logs/screenshots. Owner can give preview feedback any time.
