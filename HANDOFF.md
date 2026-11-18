@@ -1,4 +1,4 @@
-# HANDOFF v12 | date: 2026-11-18 | last code commit: 011d205
+# HANDOFF v13 | date: 2026-11-18 | last code commit: e8a9906
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
@@ -22,10 +22,10 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
 - Hero scene refinement f3d4d5c: richer globe mesh/depth, orbit rings, satellites, particles, highlight and light sweep.
 - Accent spacing correction b48ecd9: measure each word in EB Garamond and animate slot width; period moves with it.
-- Headline correction: the visible italic lettering is optically lowered by 0.04em, while the measured slot and period remain fixed. The clipping window expands vertically so the accent animation stays clean without moving the surrounding line.
+- Headline correction: the visible italic lettering is optically lowered by 0.04em, while the measured slot and period remain fixed. The word “grow” receives a small additional left inset, shared by its visible, sizing and measuring elements so the period still tracks its true width. The clipping window expands vertically so the accent animation stays clean without moving the surrounding line.
 
 ## In progress / not verified
-- Latest optical headline alignment is now fine-tuned to a 0.04em offset after the prior 0.15em adjustment sat too low; owner preview still pending. Initial accent entrance is included with the headline reveal.
+- The latest 09:03 screenshot confirmed the shared baseline. A word-specific optical inset was added to “grow” only; owner preview pending. Initial accent entrance is included with the headline reveal.
 - Service illustrations, contact form/submission and global polish remain.
 - No local build or breakpoint QA has been reported.
 
