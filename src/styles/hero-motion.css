@@ -85,3 +85,5 @@
   .button-primary::before, .button-secondary::after, .hero-title__mask { transition: none; }
   .hero-accent { will-change: auto; }
 }
+
+.hero-title__period { display: inline-block; }
