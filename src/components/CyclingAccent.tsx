@@ -46,55 +46,68 @@ export function CyclingAccent() {
 
   if (reduceMotion) {
     return (
-      <span className="hero-title__mask hero-title__mask--static">
-        <em className="hero-accent-static">scale</em>
-      </span>
+      <>
+        <span className="hero-title__mask hero-title__mask--static">
+          <em className="hero-accent-static">scale</em>
+        </span>
+        <span className="hero-title__period">.</span>
+      </>
     );
   }
 
   return (
-    <motion.span
-      className="hero-title__mask"
-      aria-live="off"
-      initial="hidden"
-      animate="visible"
-      variants={entrance}
-      style={{ width: widths[active] ? `${widths[active]}px` : undefined }}
-    >
-      <span className={`hero-accent hero-accent--sizer${opticalClass(words[active])}`} aria-hidden="true">
-        {words[active]}
-      </span>
-      <AnimatePresence initial={false}>
-        <motion.em
-          className={`hero-accent${opticalClass(words[active])}`}
-          key={words[active]}
-          initial={{ y: "112%", opacity: 0, filter: "blur(5px)" }}
-          animate={{
-            y: "0%", opacity: 1, filter: "blur(0px)",
-            backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
-          }}
-          exit={{ y: "-112%", opacity: 0, filter: "blur(4px)" }}
-          transition={{
-            y: { duration: 0.58, ease: [0.16, 1, 0.3, 1] },
-            opacity: { duration: 0.42 },
-            filter: { duration: 0.58 },
-            backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
-          }}
-        >
+    <>
+      <motion.span
+        className="hero-title__mask"
+        aria-live="off"
+        initial="hidden"
+        animate="visible"
+        variants={entrance}
+        style={{ width: widths[active] ? `${widths[active]}px` : undefined }}
+      >
+        <span className={`hero-accent hero-accent--sizer${opticalClass(words[active])}`} aria-hidden="true">
           {words[active]}
-        </motion.em>
-      </AnimatePresence>
-      <span className="hero-title__measure" aria-hidden="true">
-        {words.map((word, index) => (
-          <em
-            className={`hero-accent hero-accent--measure${opticalClass(word)}`}
-            key={word}
-            ref={(node) => { measureRefs.current[index] = node; }}
+        </span>
+        <AnimatePresence initial={false}>
+          <motion.em
+            className={`hero-accent${opticalClass(words[active])}`}
+            key={words[active]}
+            initial={{ y: "112%", opacity: 0, filter: "blur(5px)" }}
+            animate={{
+              y: "0%", opacity: 1, filter: "blur(0px)",
+              backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"],
+            }}
+            exit={{ y: "-112%", opacity: 0, filter: "blur(4px)" }}
+            transition={{
+              y: { duration: 0.58, ease: [0.16, 1, 0.3, 1] },
+              opacity: { duration: 0.42 },
+              filter: { duration: 0.58 },
+              backgroundPosition: { duration: 8, repeat: Infinity, ease: "linear" },
+            }}
           >
-            {word}
-          </em>
-        ))}
-      </span>
-    </motion.span>
+            {words[active]}
+          </motion.em>
+        </AnimatePresence>
+        <span className="hero-title__measure" aria-hidden="true">
+          {words.map((word, index) => (
+            <em
+              className={`hero-accent hero-accent--measure${opticalClass(word)}`}
+              key={word}
+              ref={(node) => { measureRefs.current[index] = node; }}
+            >
+              {word}
+            </em>
+          ))}
+        </span>
+      </motion.span>
+      <motion.span
+        className="hero-title__period"
+        initial="hidden"
+        animate="visible"
+        variants={entrance}
+      >
+        .
+      </motion.span>
+    </>
   );
 }
