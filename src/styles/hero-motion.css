@@ -34,8 +34,8 @@
   white-space: nowrap;
   will-change: transform, filter;
 }
-.hero-accent { position: absolute; top: .15em; left: 0; }
-.hero-accent-static { position: relative; top: .15em; }
+.hero-accent { position: absolute; top: .04em; left: 0; }
+.hero-accent-static { position: relative; top: .04em; }
 .hero-accent--sizer, .hero-accent--measure { position: static; visibility: hidden; will-change: auto; }
 .hero-title__measure {
   position: absolute;
