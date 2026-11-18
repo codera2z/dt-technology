@@ -1,4 +1,4 @@
-# HANDOFF v10 | date: 2026-11-18 | last code commit: 88e6bbe
+# HANDOFF v11 | date: 2026-11-18 | last code commit: d0b0358
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
@@ -22,10 +22,10 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
 - Hero scene refinement f3d4d5c: richer globe mesh/depth, orbit rings, satellites, particles, highlight and light sweep.
 - Accent spacing correction b48ecd9: measure each word in EB Garamond and animate slot width; period moves with it.
-- Current headline correction: animated word slot uses an invisible in-flow sizing word to share the exact text baseline; the slot now has its own delayed blur/slide entrance, while later word changes retain AnimatePresence transitions.
+- Headline correction: the visible italic lettering is optically lowered by 0.15em, while the measured slot and period remain fixed. The clipping window expands vertically so the accent animation stays clean without moving the surrounding line.
 
 ## In progress / not verified
-- Latest headline baseline and initial entrance correction awaits owner preview.
+- Latest optical headline alignment awaits owner preview. Initial accent entrance is included with the headline reveal.
 - Service illustrations, contact form/submission and global polish remain.
 - No local build or breakpoint QA has been reported.
 
