@@ -13,13 +13,15 @@ const headlineReveal = { hidden: {}, visible: { transition: { staggerChildren: 0
 
 export function HeroSection() {
   const reduceMotion = useReducedMotion();
-  const x = useSpring(useMotionValue(0), { stiffness: 190, damping: 22 });
-  const y = useSpring(useMotionValue(0), { stiffness: 190, damping: 22 });
+  const targetX = useMotionValue(0);
+  const targetY = useMotionValue(0);
+  const x = useSpring(targetX, { stiffness: 190, damping: 22 });
+  const y = useSpring(targetY, { stiffness: 190, damping: 22 });
   const moveCta = (event: PointerEvent<HTMLAnchorElement>) => {
     if (reduceMotion || event.pointerType !== "mouse") return;
     const rect = event.currentTarget.getBoundingClientRect();
-    x.set((event.clientX - rect.left - rect.width / 2) * 0.16);
-    y.set((event.clientY - rect.top - rect.height / 2) * 0.16);
+    targetX.set((event.clientX - rect.left - rect.width / 2) * 0.16);
+    targetY.set((event.clientY - rect.top - rect.height / 2) * 0.16);
   };
 
   return (
@@ -57,7 +59,7 @@ export function HeroSection() {
           <motion.div className="hero-actions" initial={reduceMotion ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 1.52, ease }}>
             <motion.a className="button-primary" href="#contact" style={{ x, y }}
-              onPointerMove={moveCta} onPointerLeave={() => { x.set(0); y.set(0); }}
+              onPointerMove={moveCta} onPointerLeave={() => { targetX.set(0); targetY.set(0); }}
               whileHover={reduceMotion ? undefined : { scale: 1.025 }}
               whileTap={reduceMotion ? undefined : { scale: 0.985 }}>
               Discuss Your Project
