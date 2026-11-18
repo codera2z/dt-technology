@@ -1,9 +1,9 @@
-# HANDOFF v7 | date: 2026-11-18 | last code commit: 646ba46
+# HANDOFF v8 | date: 2026-11-18 | last code commit: f3d4d5c
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1 and 2 of 5 are complete.
+- Phase: Build — commits 1 and 2 of 5 are complete; hero feedback pass committed.
 - Next: Commit 3 — five original service illustrations with scroll-into-view drawing, idle and hover/tap states. Defer local build and consolidated breakpoint/accessibility review until design work is complete.
 
 ## Approved
@@ -19,9 +19,10 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - Windows 11; Node 26.13.1; npm 11.20.0; Git 2.56.1.windows.1.
 
 ## Done
-- Commit 1: responsive header/hero shell, static scene placeholder, five-service marquee, service copy shell, contact intro shell, palette, self-hosted licensed fonts and scroll offsets. Owner provisionally accepted current preview.
-- Commit 2: original canvas scene with mesh, three depth layers, particles, light sweep, desktop pointer response, touch drift and reduced-motion static state; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
-- Full 838-line Stitch HTML reviewed; no separate screenshots were attached.
+- Commit 1: responsive header/hero shell, service marquee and copy shell, contact intro shell, palette, licensed self-hosted fonts and scroll offsets. Owner provisionally accepted preview.
+- Commit 2: original canvas scene; Motion headline reveal, cycling accent, opening wordmark and magnetic CTA.
+- Hero feedback pass f3d4d5c: enlarged accent mask and reserved width; richer sphere with front/back mesh, flowing contours, three instrumented orbit rings, satellites, connected particles, highlight and light sweep.
+- Owner's screenshot feedback: cycling word was clipped; sphere looked too simple. Screenshot file is in repo; the repository connector could not render its PNG bytes.
 
 ## In progress / not verified
 - Service illustrations/reveals, contact form/submission and global polish remain.
@@ -31,7 +32,7 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - Stitch CSS loops, Material Symbols, Google Fonts/Tailwind CDNs, footer, fake form success and unsupported claims.
 
 ## Owner preferences
-- Plain explanations; Windows PowerShell. Use responsive judgment rather than requiring intermediate logs/screenshots. Owner can give preview feedback any time.
+- Plain explanations; Windows PowerShell. Use responsive judgment, no intermediate build logs/screenshots. Owner can give preview feedback any time.
 
 ## Commands for final review
 - npm run build
