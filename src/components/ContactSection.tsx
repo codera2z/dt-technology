@@ -5,7 +5,7 @@ export function ContactSection() {
     <section className="contact-section page-section" id="contact"
       aria-labelledby="contact-title">
       <div className="contact-copy">
-        <p className="section-label">[ 02 ] Contact</p>
+        <p className="section-label">Contact</p>
         <h2 className="section-title contact-title" id="contact-title">
           <span className="contact-title__word">Let’s</span>{" "}
           <span className="contact-title__word">work</span>{" "}
