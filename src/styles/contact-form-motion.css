@@ -22,13 +22,3 @@
 .contact-field::after, .contact-field label, .contact-submit { transition: none; }
 .contact-submit::before { display: none; }
 }
-
-@keyframes contact-form-shake { 0%,100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 50% { transform: translateX(3px); } 75% { transform: translateX(-2px); } }
-@keyframes contact-spinner { to { transform: rotate(360deg); } }
-@keyframes contact-success-particle { 0% { opacity: 0; transform: translateY(16px) scale(.5); } 35% { opacity: .9; } 100% { opacity: 0; transform: translateY(-28px) scale(1); } }
-.contact-form-panel.is-success .contact-success-particles i { animation: contact-success-particle 1.6s ease-out both; }
-@media (prefers-reduced-motion: reduce) {
-  .contact-form-panel.is-error, .contact-success-particles i { animation: none; }
-  .contact-success-particles i { opacity: .55; }
-  .contact-submit__spinner { animation: none; }
-}
