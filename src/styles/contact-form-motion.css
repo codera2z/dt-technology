@@ -1,0 +1,24 @@
+@keyframes contact-word-reveal {from { opacity: 0; transform: translateY(12px); filter: blur(7px); }to { opacity: 1; transform: translateY(0); filter: blur(0); } }
+@keyframes contact-title-shimmer {0%, 65%, 100% { background-position: 0% 50%; }82% { background-position: 100% 50%; } }
+@keyframes contact-border-travel {from { transform: translateX(0); }to { transform: translateX(185%); } }
+@media (max-width: 900px) {
+.contact-section { gap: 30px; }
+.contact-form-panel { padding: 24px; }
+.contact-form__fields { column-gap: 18px; }
+.contact-form__footer { align-items: flex-start; flex-direction: column; }
+}
+@media (max-width: 720px) {
+.contact-form-panel { margin-top: 32px; padding: 22px 18px; }
+.contact-form__fields { grid-template-columns: 1fr; row-gap: 18px; }
+.contact-field--full { grid-column: auto; }
+.contact-form__footer { flex-direction: column; align-items: stretch; }
+.contact-form__note { max-width: none; }
+.contact-submit { width: 100%; min-height: 50px; }
+.contact-email { flex-wrap: wrap; }
+}
+@media (prefers-reduced-motion: reduce) {
+.contact-title__word, .contact-title__accent, .contact-form-panel__light { animation: none; }
+.contact-title__accent { background-position: 0 50%; }
+.contact-field::after, .contact-field label, .contact-submit { transition: none; }
+.contact-submit::before { display: none; }
+}
