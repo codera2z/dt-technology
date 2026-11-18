@@ -1,10 +1,10 @@
-# HANDOFF v16 | date: 2026-11-18 | last code commit: cdbf5c0
+# HANDOFF v17 | date: 2026-11-18 | last code commit: c105fac
 
 Rules: overwrite completely, never append; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1–4 implemented, including Web3Forms client integration.
-- Next: Commit 5 global polish, responsive, accessibility and performance review. Then run the consolidated build, typecheck and breakpoint QA. Actual email delivery still needs an owner-provided access key and recipient inbox confirmation.
+- Phase: Build — commits 1–4 form UI and validation are implemented; email delivery is deferred.
+- Next: Commit 5 global polish, responsive, accessibility and performance review. Then run build, typecheck and breakpoint QA.
 
 ## Approved
 - Existing stack: Vite, React, TypeScript, Tailwind CSS v4 and Motion. No new dependencies.
@@ -15,18 +15,19 @@ Rules: overwrite completely, never append; preserve this template and stay under
 - One page: Hero, Services, Contact; no footer. Header has only Services and Contact.
 - Section labels are “Services” and “Contact”, without numeric prefixes.
 - No fabricated claims, CDN assets, secrets or personal data in Git.
-- Contact provider is isolated in src/lib/submitContact.ts and reads VITE_WEB3FORMS_KEY. Real keys belong only in ignored .env.local; .env.example is safe to commit.
-- hello@dttechnology.com came from Stitch and is unverified; confirm the intended recipient before creating the Web3Forms key.
+- Contact form provides client-side validation only; it does not send messages.
+- Keep hello@dttechnology.com visible as a provisional public email option. The mailbox is not set up; retain it until the owner asks to replace/add a company inbox.
+- Do not integrate Web3Forms or use a personal inbox. Revisit delivery only after the owner has a company email and explicitly requests setup.
 
 ## Done
 - Commit 1: header/hero shell, service marquee, contact intro, palette, licensed self-hosted fonts and scroll offsets.
 - Commit 2: original canvas scene, animated headline, cycling accent, opening wordmark and magnetic CTA.
 - Commit 3: five original SVG service illustrations, in-view reveals, hover spotlight and reduced-motion handling.
 - Hero marquee: pinned to the bottom with a seamless left-to-right loop.
-- Commit 4: contact form and validation; Web3Forms JSON submission; honeypot; loading, success and error states; responsive styling. Success is shown only after provider success is confirmed.
+- Commit 4: contact form, validation, floating labels, responsive styling and visible provisional email link. No form delivery integration.
 
 ## In progress / not verified
-- No real access key was supplied, so end-to-end email delivery has not been tested.
+- Company email has not been set up; no receiving inbox has been selected.
 - No local build, typecheck or breakpoint/browser QA has been reported.
 
 ## Owner preferences

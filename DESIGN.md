@@ -63,6 +63,6 @@ One h1, semantic landmarks, logical headings, visible focus, keyboard access, AA
 1. Fixes, content, header and hero layout — provisionally accepted in the owner's preview.
 2. Original hero animation.
 3. Five service illustrations and in-view interactions.
-4. Contact form, validation and Web3Forms submission.
+4. Contact form and client-side validation. Email delivery integration is deferred until a company inbox is ready and the owner requests it.
 5. Global polish, responsive, accessibility and performance review.
 Proceed through design commits without requesting build logs/screenshots between each one. Use sound responsive judgment and review the code at each breakpoint. The owner may provide preview feedback at any time. After commit 5, provide one consolidated local build and QA checklist with exact commands. Never claim checks passed until the owner runs them.
