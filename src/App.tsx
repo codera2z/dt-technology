@@ -6,8 +6,9 @@ import { ContactSection } from "./components/ContactSection";
 function App() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <SiteHeader />
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <HeroSection />
         <ServicesSection />
         <ContactSection />
