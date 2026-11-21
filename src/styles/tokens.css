@@ -42,7 +42,7 @@
   --font-body: "Inter", Arial, sans-serif;
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 20px); }
+html { scroll-behavior: smooth; scroll-padding-top: var(--header-height); }
 body { min-width: 320px; margin: 0; }
 main { padding-top: var(--header-height); }
 body, button, input, select, textarea { font-family: var(--font-body); }
@@ -53,4 +53,3 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   outline-offset: 4px;
 }
 ::selection { color: var(--paper); background: var(--terracotta); }
-.page-section { scroll-margin-top: calc(var(--header-height) + 20px); }

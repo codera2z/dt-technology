@@ -1,5 +1,5 @@
 .services-section {
-  padding: clamp(84px, 10vw, 144px) max(24px, calc((100vw - var(--content-width)) / 2));
+  padding: clamp(64px, 7vw, 104px) max(24px, calc((100vw - var(--content-width)) / 2));
   background: var(--panel);
 }
 .section-intro { max-width: 780px; margin-bottom: 54px; }
@@ -67,7 +67,8 @@
 .contact-mark { display: flex; align-items: baseline; gap: 10px; padding-right: 8%; color: #C4622D; font: 400 clamp(74px, 13vw, 190px)/1 var(--font-display); opacity: .72; }
 .contact-mark strong { color: rgba(250,245,236,.13); font: 500 .55em var(--font-body); letter-spacing: .12em; }
 @media (max-width: 720px) {
-  .services-section, .contact-section { padding: 76px 20px; }
+  .services-section { padding: 56px 20px; }
+  .contact-section { padding: 76px 20px; }
   .section-intro { margin-bottom: 36px; }
   .section-title { font-size: clamp(40px, 10vw, 56px); }
   .section-description { margin-top: 16px; font-size: 13px; }
