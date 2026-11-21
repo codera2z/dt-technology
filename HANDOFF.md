@@ -1,4 +1,4 @@
-# HANDOFF v24 | date: 2026-11-21 | last code commit: 0ac5928
+# HANDOFF v25 | date: 2026-11-21 | last code commit: 0d5a466
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
@@ -23,7 +23,7 @@ Rules: overwrite completely; preserve this template and stay under 350 words.
 - Commits 1–4: header/hero, original canvas scene, five service illustrations and interactions, and contact form with client-side validation.
 - Commit 5: skip link; scroll progress/header treatment; active navigation; keyboard-aware mobile menu; improved text/button contrast; reduced-motion and forced-colors support.
 - Follow-up spacing: reduced Services vertical padding and aligned fragment anchors to the fixed header height.
-- Browser tab only: title is “DT Technology”; the SVG favicon has a white square background, bolder and more widely spaced espresso DT letters, and terracotta brackets. Website header logo and company text remain unchanged.
+- Browser tab: title is “DT Technology”; no custom favicon is configured. Website header logo and company text are unchanged.
 - Hero marquee remains pinned at the bottom with a seamless loop.
 - Numbering: [01] hero eyebrow, [02] Services, [03] Contact.
 
