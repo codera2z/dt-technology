@@ -45,7 +45,7 @@
   font-size: 30px;
   line-height: 1;
 }
-.site-brand__mark strong { color: #0B0B0B; font: 600 19px var(--font-body); letter-spacing: .14em; }
+.site-brand__mark strong { color: var(--espresso); font: 600 19px var(--font-body); letter-spacing: .14em; }
 .site-brand__name {
   color: var(--espresso);
   font-size: 11px;
