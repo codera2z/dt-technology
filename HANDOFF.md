@@ -1,9 +1,9 @@
-# HANDOFF v19 | date: 2026-11-21 | last code commit: 48e92c0
+# HANDOFF v20 | date: 2026-11-21 | last code commit: c74969a
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1–5 are implemented; final validation is pending.
+- Phase: Build — implementation and requested spacing/anchor refinements are committed; final validation is pending.
 - Next: Run the consolidated build, typecheck, responsive and accessibility review at 375, 768, 1024 and 1440px.
 
 ## Approved
@@ -21,8 +21,9 @@ Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Done
 - Commits 1–4: header/hero, original canvas scene, five service illustrations and interactions, and contact form with client-side validation.
-- Commit 5: skip-to-content link; scroll progress and scrolled-header treatment; active-section navigation; Escape-to-close and resize-close mobile menu; contrast-aware text/button accent; reduced-motion and forced-colors skip-link support.
-- Hero marquee: pinned bottom, seamless left-to-right loop.
+- Commit 5: skip link; scroll progress/header treatment; active navigation; keyboard-aware mobile menu; improved text/button contrast; reduced-motion and forced-colors support.
+- Follow-up spacing: reduced Services section vertical padding; set one root scroll offset to the fixed header height so fragment links align below the header without a second section margin.
+- Hero marquee remains pinned at the bottom with a seamless loop.
 - Numbering: [01] hero eyebrow, [02] Services, [03] Contact.
 
 ## In progress / not verified
