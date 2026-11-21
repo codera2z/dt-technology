@@ -76,7 +76,7 @@ export function SiteHeader() {
             <motion.span initial={reduceMotion ? false : { x: -14, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.72, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}>[</motion.span>
             <motion.strong initial={reduceMotion ? false : { opacity: 0, scale: 0.92 }}
-              animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.54, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}>DT</motion.strong>
+              animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.54, delay: 0.25, ease: [0.16, 1, 0.3, 1] }}>D{" "}T</motion.strong>
             <motion.span initial={reduceMotion ? false : { x: 14, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.72, delay: 0.06, ease: [0.16, 1, 0.3, 1] }}>]</motion.span>
           </span>
