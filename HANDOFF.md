@@ -1,10 +1,10 @@
-# HANDOFF v18 | date: 2026-11-18 | last code commit: dbb8409
+# HANDOFF v19 | date: 2026-11-21 | last code commit: 48e92c0
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — commits 1–4 form UI and validation are implemented; delivery is deferred.
-- Next: Commit 5 global polish, responsive, accessibility and performance review; then build, typecheck and breakpoint QA.
+- Phase: Build — commits 1–5 are implemented; final validation is pending.
+- Next: Run the consolidated build, typecheck, responsive and accessibility review at 375, 768, 1024 and 1440px.
 
 ## Approved
 - Existing Vite, React, TypeScript, Tailwind CSS v4 and Motion stack. No new dependencies.
@@ -20,16 +20,14 @@ Rules: overwrite completely; preserve this template and stay under 350 words.
 - No Web3Forms or personal inbox. Revisit delivery only after the owner has a company email and explicitly requests setup.
 
 ## Done
-- Commit 1: header/hero shell, marquee, contact intro, palette, licensed self-hosted fonts and scroll offsets.
-- Commit 2: original canvas scene, animated headline, cycling accent, opening wordmark and magnetic CTA.
-- Commit 3: five original SVG service illustrations, in-view reveals, hover spotlight and reduced-motion handling.
+- Commits 1–4: header/hero, original canvas scene, five service illustrations and interactions, and contact form with client-side validation.
+- Commit 5: skip-to-content link; scroll progress and scrolled-header treatment; active-section navigation; Escape-to-close and resize-close mobile menu; contrast-aware text/button accent; reduced-motion and forced-colors skip-link support.
 - Hero marquee: pinned bottom, seamless left-to-right loop.
-- Commit 4: contact form, validation, floating labels, responsive styling and provisional email link. No delivery integration.
 - Numbering: [01] hero eyebrow, [02] Services, [03] Contact.
 
 ## In progress / not verified
 - Company email and receiving inbox are not set up.
-- No local build, typecheck or breakpoint/browser QA reported.
+- No local build, typecheck, browser, breakpoint or accessibility QA has been run/reported.
 
 ## Owner preferences
 - Plain explanations; Windows PowerShell. No intermediate build logs/screenshots.
