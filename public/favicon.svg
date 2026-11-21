@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <title>DT Technology</title>
   <rect width="64" height="64" fill="#FFFFFF"/>
-  <path d="M14 13H9V51H14M50 13H55V51H50"
-    fill="none" stroke="#C4622D" stroke-width="3.6" stroke-linecap="square" stroke-linejoin="miter"/>
-  <path d="M19 17H25.2C32.7 17 36.2 22.6 36.2 32S32.7 47 25.2 47H19V17ZM24 22.5V41.5H25.1C29.4 41.5 31.2 38.2 31.2 32S29.4 22.5 25.1 22.5H24Z"
-    transform="translate(-2 0)" fill="#2A1F1A" fill-rule="evenodd"/>
-  <path d="M35.5 17H48V22.5H43.5V47H37.8V22.5H35.5V17Z"
-    transform="translate(4 0)" fill="#2A1F1A"/>
+  <path d="M12 12H6V52H12M54 12H58V52H54"
+    fill="none" stroke="#C4622D" stroke-width="4.4" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M18 14H24C32.2 14 35 21 35 32S32.2 50 24 50H18V14ZM23 21V43H24C27.8 43 28.8 39 28.8 32S27.8 21 24 21H23Z"
+    fill="#2A1F1A" fill-rule="evenodd"/>
+  <path d="M41 14H52V22H48V50H41V22H41V14Z"
+    fill="#2A1F1A"/>
 </svg>
