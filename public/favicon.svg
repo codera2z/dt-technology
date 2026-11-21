@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>DT Technology</title>
+  <path d="M16 13H11V51H16M48 13H53V51H48"
+    fill="none" stroke="#C4622D" stroke-width="3.6" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M19 17H25.2C32.7 17 36.2 22.6 36.2 32S32.7 47 25.2 47H19V17ZM24 22.5V41.5H25.1C29.4 41.5 31.2 38.2 31.2 32S29.4 22.5 25.1 22.5H24Z"
+    fill="#2A1F1A" fill-rule="evenodd"/>
+  <path d="M35.5 17H48V22.5H43.5V47H37.8V22.5H35.5V17Z" fill="#2A1F1A"/>
+</svg>
