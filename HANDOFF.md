@@ -1,40 +1,37 @@
-# HANDOFF v25 | date: 2026-11-21 | last code commit: 0d5a466
+# HANDOFF v26 | date: 2026-11-25 | last code commit: 7ca7344
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — implementation and owner-requested refinements are committed; final validation is pending.
-- Next: Run the consolidated build, typecheck, responsive and accessibility review at 375, 768, 1024 and 1440px.
+- Phase: Build — motion refinements implemented; build and typecheck pass.
+- Next: Complete browser review at 375, 768, 1024 and 1440px, including reduced-motion behavior.
 
 ## Approved
-- Existing Vite, React, TypeScript, Tailwind CSS v4 and Motion stack. No new dependencies.
-- Warm cream / espresso / terracotta; EB Garamond + Inter; square-bracket motif.
-- Positioning: “AI-accelerated, engineer-accountable.”
+- Vite, React, TypeScript, Tailwind CSS v4 and Motion; no new dependencies.
+- Cream / espresso / terracotta, EB Garamond + Inter; “AI-accelerated, engineer-accountable.”
 
 ## Locked decisions
 - One page: Hero, Services, Contact; no footer. Header has only Services and Contact.
-- Eyebrows: [01] PRODUCTS / WEBSITES / AI / AUTOMATION; [02] Services; [03] Contact.
-- No fabricated claims, CDN assets, secrets or personal data in Git.
-- Contact form validates client-side only; it does not send messages.
-- Keep hello@dttechnology.com visible as a provisional public email option. The mailbox is not set up; retain it until the owner asks to add/replace a company inbox.
-- No Web3Forms or personal inbox. Revisit delivery only after the owner has a company email and explicitly requests setup.
+- Keep [01]/[02]/[03] eyebrow numbering and do not invent claims or commit secrets/personal data.
+- Respect the visitor's system reduced-motion preference automatically; do not add on-page animation pause controls.
+- Contact form is client-side only; it does not send messages.
+- Keep hello@dttechnology.com as provisional public email; mailbox is unconfigured. No Web3Forms or personal inbox; defer delivery until a company inbox exists and the owner asks.
 
 ## Done
-- Commits 1–4: header/hero, original canvas scene, five service illustrations and interactions, and contact form with client-side validation.
-- Commit 5: skip link; scroll progress/header treatment; active navigation; keyboard-aware mobile menu; improved text/button contrast; reduced-motion and forced-colors support.
-- Follow-up spacing: reduced Services vertical padding and aligned fragment anchors to the fixed header height.
-- Browser tab: title is “DT Technology”; no custom favicon is configured. Website header logo and company text are unchanged.
-- Hero marquee remains pinned at the bottom with a seamless loop.
-- Numbering: [01] hero eyebrow, [02] Services, [03] Contact.
+- Commits 1–5 complete: header/hero, canvas, service illustrations, contact form and global polish.
+- Removed on-page pause controls from the marquee and service illustrations; system reduced-motion preferences remain respected, and service loops pause offscreen.
+- Hero scene uses a scale-only Motion entrance so mobile CSS opacity remains effective.
+- Typed a Motion easing tuple; build and typecheck pass.
+- `npm run build`, `npm run typecheck` and `git diff --check` pass.
 
 ## In progress / not verified
-- Company email and receiving inbox are not set up.
-- No local build, typecheck, browser, breakpoint or accessibility QA has been run/reported.
+- Browser responsive/accessibility QA at 375, 768, 1024 and 1440px remains pending.
+- Company inbox is not set up; refinement changes are local and uncommitted.
 
 ## Owner preferences
 - Plain explanations; Windows PowerShell. No intermediate build logs/screenshots.
 
 ## Commands for final review
-- npm run build
-- npm run typecheck
 - npm run dev
+- Verify prefers-reduced-motion disables marquee and service illustration animations.
+- Check for horizontal overflow and layout at 375, 768, 1024 and 1440px.

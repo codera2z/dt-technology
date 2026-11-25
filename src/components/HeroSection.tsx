@@ -71,8 +71,8 @@ export function HeroSection() {
           </motion.div>
         </motion.div>
         <motion.div className="hero-scene" aria-hidden="true"
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={reduceMotion ? false : { scale: 0.96 }}
+          animate={{ scale: 1 }}
           transition={{ duration: 1.25, delay: 0.55, ease }}>
           <HeroScene />
         </motion.div>

@@ -37,6 +37,7 @@ Repeat only these five services, separated by small dots:
 4. Automation & Integration
 5. Product Engineering & Lifecycle
 Scroll velocity may subtly affect speed/direction. No extra promotional phrases.
+Automatically disable the movement when the visitor's system requests reduced motion; do not add an on-page pause control.
 
 ## Services
 Label: **[02] Services**. Intro in plain, confident language: explain how DT helps startups and growing businesses decide what to build, create useful software and improve workflows; larger organisations are welcome.
@@ -46,7 +47,7 @@ Five rows with distinct original illustrations:
 3. **AI & GenAI:** node network gently attracts/connects near cursor; short chat reply types token by token; completion sparkle.
 4. **Automation & Integration:** app tiles connect by curves; pulses travel to hub; gear engages on arrival.
 5. **Product Engineering & Lifecycle:** build → ship → improve cycle; orbiting nodes, progress arc and lifting/settling layers.
-Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause loops offscreen; provide static/reduced-motion alternatives.
+Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause illustration loops offscreen and provide static/reduced-motion alternatives. Do not add an on-page pause control.
 
 ## Contact and submission
 Label: **[03] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
