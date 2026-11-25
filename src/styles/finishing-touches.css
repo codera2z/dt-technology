@@ -1,0 +1,66 @@
+.services-section {
+  position: relative;
+  isolation: isolate;
+}
+.services-section::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 76px;
+  background: linear-gradient(to bottom, var(--paper), rgba(243, 233, 216, 0));
+  content: "";
+  pointer-events: none;
+}
+.services-section > * { position: relative; z-index: 1; }
+
+.contact-section {
+  background-image:
+    radial-gradient(ellipse at 80% 18%, rgba(196, 98, 45, .15), transparent 43%),
+    radial-gradient(ellipse at 8% 86%, rgba(196, 98, 45, .09), transparent 36%),
+    linear-gradient(rgba(250, 245, 236, .035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(250, 245, 236, .035) 1px, transparent 1px);
+  background-size: auto, auto, 44px 44px, 44px 44px;
+  isolation: isolate;
+}
+.contact-section::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 76px;
+  background: linear-gradient(to bottom, rgba(243, 233, 216, .32), rgba(42, 31, 26, 0));
+  content: "";
+  pointer-events: none;
+}
+.contact-copy, .contact-form-panel { position: relative; z-index: 1; }
+.contact-form-panel {
+  border-color: rgba(250, 245, 236, .24);
+  background: linear-gradient(145deg, rgba(250, 245, 236, .075), rgba(250, 245, 236, .018));
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .14), inset 0 1px 0 rgba(250, 245, 236, .07);
+}
+.contact-email {
+  transition: border-color .3s var(--lux-ease), color .3s var(--lux-ease);
+}
+.contact-email > span:nth-child(2) { transition: color .3s var(--lux-ease); }
+.contact-email > span:last-child, .contact-submit > span {
+  transition: transform .3s var(--lux-ease);
+}
+.button-primary > span, .button-secondary > span { transition: transform .3s var(--lux-ease); }
+.contact-email:focus-visible { outline-offset: 6px; }
+
+@media (hover: hover) and (pointer: fine) {
+  .contact-email:hover { border-color: rgba(229, 162, 126, .62); }
+  .contact-email:hover > span:nth-child(2) { color: #F0B18F; }
+  .contact-email:hover > span:last-child,
+  .contact-submit:hover > span,
+  .button-primary:hover > span,
+  .button-secondary:hover > span { transform: translateX(4px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-email, .contact-email > span, .contact-submit > span,
+  .button-primary > span, .button-secondary > span { transition: none; }
+}
