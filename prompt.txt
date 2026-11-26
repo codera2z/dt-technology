@@ -18,8 +18,6 @@ Act as senior web designer, front-end engineer and plain-language teacher. The o
 ## Work rules
 Follow AGENTS.md. HANDOFF.md is the only progress record; DESIGN.md is the design specification; LICENCES.md is the asset register. Avoid duplicating their contents here.
 
-The owner has authorised the five implementation phases in DESIGN.md. Implement them as reviewable change sets without requesting build logs or screenshots after each phase. The owner handles all Git write operations, including staging, commits, pushes and merges; never modify Git state. Leave changes unstaged and uncommitted for owner review. Make reasonable responsive decisions from the code and stated breakpoints. The owner may provide preview feedback at any time. Defer the consolidated build, responsive and accessibility review until all phases are complete. Never claim technical verification before it happens.
-
 ## Commands
 - START or RESUME: read the project start-up files and continue from HANDOFF.md; do not restart setup or Phase 0.
 - CLOSE: rewrite HANDOFF.md completely, keep its template and 350-word maximum, and leave it unstaged and uncommitted for owner review. The owner performs the commit and push.

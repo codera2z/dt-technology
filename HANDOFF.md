@@ -1,10 +1,10 @@
-# HANDOFF v34 | date: 2026-11-26 | last code commit: a4c6ee1
+# HANDOFF v36 | date: 2026-11-26 | last code commit: a4c6ee1
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Hero animation refinement committed; consolidated validation remains.
-- Next: Run `npm run typecheck` and `npm run build`, then review 375, 768, 1024 and 1440px plus reduced-motion behavior.
+- Phase: Hero animation refinement complete; Services artwork/layout present; consolidated validation in progress.
+- Next: Complete browser checks at 375, 768, 1024 and 1440px plus runtime reduced-motion behavior. Fix observed issues, then finish accessibility and performance review.
 
 ## Approved
 - Vite, React, TypeScript, Tailwind CSS v4 and Motion; no additional dependencies approved.
@@ -18,17 +18,18 @@ Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Done
 - `d16c078` anchors the hero composition and makes pointer response local to sphere lighting/spin, orbital rings and separate particle depths.
-- `a4c6ee1` adds three animated silk highlights and softens the sphere's dense grid so the centerpiece reads as polished glass/stone.
-- Firefox desktop preview captured at 1207x811 before and during pointer hover; surface details respond while the sphere and artwork frame remain anchored.
-- No dependencies or public content changes. All source `.ts`, `.tsx` and `.css` files remain under 150 lines.
+- `a4c6ee1` adds three animated silk highlights and softens the sphere grid.
+- The 26 Nov Services follow-up is reflected in source: editorial two-column desktop intro, five original SVG service scenes, and artwork below copy on mobile.
+- `npm run typecheck` passed on 2026-11-26.
+- `npm run build` passed on 2026-11-26 with Vite 8.3.8; output: 404.53 kB JS and 42.32 kB CSS (uncompressed).
+- All application `.ts`, `.tsx` and `.css` files remain under 150 lines. No dependencies added.
 
 ## In progress / not verified
-- `npm run typecheck` and `npm run build` were not run for `a4c6ee1`.
-- Responsive checks at 375, 768, 1024 and 1440px and runtime reduced-motion checks remain pending.
+- Browser layout checks at 375, 768, 1024 and 1440px were not run. Native browser control failed because its pipe was unavailable; no browser executable was found on PATH.
+- Runtime reduced-motion behavior remains unverified. Source includes `useReducedMotion` and reduced-motion CSS fallbacks, but this is not a runtime test.
 
 ## Owner preferences
-- Plain explanations; Windows PowerShell. Capture screenshots when needed; do not inspect existing screenshots unless asked.
-- Owner handles all Git write operations, including staging, commits, pushes, merges and branch/history changes. Leave assistant edits unstaged and uncommitted for owner review.
+- Plain explanations; Windows PowerShell. Do not inspect existing screenshots unless asked.
 
 ## Commands for final review
 - `npm run typecheck`

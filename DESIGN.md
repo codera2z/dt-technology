@@ -69,4 +69,4 @@ One h1, semantic landmarks, logical headings, visible focus, keyboard access, AA
 3. Five service illustrations and in-view interactions.
 4. Contact form and client-side validation. Email delivery integration is deferred until a company inbox is ready and the owner requests it.
 5. Global polish, responsive, accessibility and performance review.
-Proceed through the five implementation phases as reviewable change sets; do not create commits. The owner handles all Git write operations, including staging, commits, pushes and merges. Leave changes unstaged and uncommitted for owner review. Do not request build logs/screenshots between phases. Use sound responsive judgment and review the code at each breakpoint. The owner may provide preview feedback at any time. After phase 5, provide one consolidated local build and QA checklist with exact commands. Never claim checks passed until the owner runs them.
+Implement the five phases in order as reviewable change sets. Collaboration, Git ownership and verification rules are defined in AGENTS.md.
