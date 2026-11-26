@@ -2,7 +2,18 @@
   padding: clamp(64px, 7vw, 104px) max(24px, calc((100vw - var(--content-width)) / 2));
   background: var(--panel);
 }
-.section-intro { max-width: 780px; margin-bottom: 54px; }
+.section-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.16fr) minmax(280px, .72fr);
+  grid-template-areas: "label label" "title description";
+  align-items: end;
+  column-gap: clamp(36px, 7vw, 104px);
+  max-width: none;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+.section-intro .section-label { grid-area: label; }
+.section-intro .section-title { grid-area: title; }
+.section-intro .section-description { grid-area: description; margin: 0 0 7px; }
 .section-title {
   max-width: 780px;
   margin: 0;
@@ -70,6 +81,8 @@
   .services-section { padding: 56px 20px; }
   .contact-section { padding: 76px 20px; }
   .section-intro { margin-bottom: 36px; }
+  .section-intro { grid-template-columns: minmax(0, 1fr); grid-template-areas: "label" "title" "description"; }
+  .section-intro .section-description { margin: 16px 0 0; }
   .section-title { font-size: clamp(40px, 10vw, 56px); }
   .section-description { margin-top: 16px; font-size: 13px; }
   .service-row { min-height: 0; grid-template-columns: 54px minmax(0, 1fr) 20px; gap: 10px; padding: 22px 2px; }

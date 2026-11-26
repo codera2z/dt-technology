@@ -49,6 +49,8 @@ Five rows with distinct original illustrations:
 5. **Product Engineering & Lifecycle:** build → ship → improve cycle; orbiting nodes, progress arc and lifting/settling layers.
 Rows reveal only on scroll into view. Hairline draws, copy staggers up, index changes to terracotta on hover, arrow slides in and desktop spotlight follows cursor. Use compact mobile illustrations. Support tap; pause illustration loops offscreen and provide static/reduced-motion alternatives. Do not add an on-page pause control.
 
+**Owner follow-up, 26 Nov 2026:** Replace generic framed diagrams with detailed, original scenes that explain each service: a prioritised roadmap and budget allocation; a responsive browser and device preview; an AI context network with a typed response; connected workflow inputs and outputs; and the build / ship / improve lifecycle. Use an editorial two-column Services introduction and give the illustrations enough room to read. On mobile, place compact artwork below the service copy.
+
 ## Contact and submission
 Label: **[03] Contact**. Email label: **Email us**. Approachable invitation; heading word reveal and restrained shimmer. Subtle grid/dot texture and travelling form-border light.
 Exact labels: **Name**, **Email**, **Company (optional)**, **What do you need?**, **Tell us about your project**. Neutral placeholders. Floating labels and expanding terracotta focus underline. Magnetic/shimmer submit button. States: loading/spinner, success with palette-matched particles and confirmation, error with gentle shake.

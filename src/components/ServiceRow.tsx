@@ -3,7 +3,7 @@ import type { PointerEvent } from "react";
 import { ServiceIllustration } from "./ServiceIllustration";
 import type { ServiceKind } from "./ServiceIllustration";
 
-const aiNodePoints = [[31, 71], [64, 39], [88, 77], [116, 42], [139, 78], [171, 49]] as const;
+const aiNodePoints = [[30, 45], [58, 105], [98, 22], [163, 31], [222, 67], [171, 112]] as const;
 const clampPull = (value: number) => Math.max(-4, Math.min(4, value));
 
 type ServiceRowProps = {
@@ -65,8 +65,8 @@ export function ServiceRow({ title, description, kind, index }: ServiceRowProps)
         const artwork = element.querySelector<SVGSVGElement>(".service-illustration--ai");
         if (artwork) {
           const artBounds = artwork.getBoundingClientRect();
-          const pointerX = ((clientX - artBounds.left) / artBounds.width) * 220;
-          const pointerY = ((clientY - artBounds.top) / artBounds.height) * 132;
+          const pointerX = ((clientX - artBounds.left) / artBounds.width) * 260;
+          const pointerY = ((clientY - artBounds.top) / artBounds.height) * 160;
           artwork.querySelectorAll<SVGCircleElement>(".service-art__node").forEach((node, index) => {
             const point = aiNodePoints[index];
             if (!point) return;
