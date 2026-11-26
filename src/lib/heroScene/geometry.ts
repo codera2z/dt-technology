@@ -15,24 +15,24 @@ export function spherePoint(lat: number, lon: number, radius: number, spin: numb
   };
 }
 
-function strokeProjectedPath(ctx: CanvasRenderingContext2D, points: ScenePoint[]) {
+function strokeSurfacePath(ctx: CanvasRenderingContext2D, points: ScenePoint[], accent: boolean) {
   ctx.beginPath();
-  points.forEach((p, i) => i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y));
-  ctx.strokeStyle = "rgba(42,31,26,0.055)";
-  ctx.lineWidth = 0.7;
+  points.forEach((point, index) => index ? ctx.lineTo(point.x, point.y) : ctx.moveTo(point.x, point.y));
+  ctx.strokeStyle = "rgba(42,31,26,0.06)";
+  ctx.lineWidth = 0.58;
   ctx.stroke();
 
   ctx.beginPath();
   let drawing = false;
-  points.forEach((p) => {
-    if (p.z > 0) {
-      if (drawing) ctx.lineTo(p.x, p.y);
-      else ctx.moveTo(p.x, p.y);
+  points.forEach((point) => {
+    if (point.z > 0) {
+      if (drawing) ctx.lineTo(point.x, point.y);
+      else ctx.moveTo(point.x, point.y);
       drawing = true;
     } else drawing = false;
   });
-  ctx.strokeStyle = "rgba(42,31,26,0.34)";
-  ctx.lineWidth = 0.9;
+  ctx.strokeStyle = accent ? "rgba(196,98,45,0.3)" : "rgba(42,31,26,0.27)";
+  ctx.lineWidth = accent ? 0.9 : 0.74;
   ctx.stroke();
 }
 
@@ -40,37 +40,55 @@ export function drawSphereMesh(
   ctx: CanvasRenderingContext2D, cx: number, cy: number, radius: number,
   spin: number, time: number, compact: boolean,
 ) {
-  const parallels = compact ? 8 : 13;
-  const meridians = compact ? 14 : 23;
-  const segments = compact ? 42 : 68;
-  const latitudes = Array.from({ length: parallels + 1 }, (_, i) => -1.3 + 2.6 * i / parallels);
+  const contourCount = compact ? 10 : 18;
+  const flowCount = compact ? 7 : 15;
+  const samples = compact ? 56 : 88;
 
-  latitudes.forEach((lat) => {
-    const points = Array.from({ length: segments + 1 }, (_, j) => {
-      const p = spherePoint(lat, j / segments * TAU, radius, spin, time);
-      return { x: cx + p.x, y: cy + p.y, z: p.z };
+  for (let band = 0; band < contourCount; band++) {
+    const level = -1.24 + band * 2.48 / (contourCount - 1);
+    const points = Array.from({ length: samples + 1 }, (_, step) => {
+      const lon = step / samples * TAU;
+      const drift = Math.sin(lon * 2.1 + level * 3 + time * 0.00018) * 0.048;
+      const fold = Math.sin(lon * 4.4 - time * 0.00013 + band) * 0.018;
+      const point = spherePoint(level + drift + fold, lon, radius * 1.002, spin, time);
+      return { x: cx + point.x, y: cy + point.y, z: point.z };
     });
-    strokeProjectedPath(ctx, points);
-  });
+    strokeSurfacePath(ctx, points, band % 4 === 1);
+  }
 
-  Array.from({ length: meridians }, (_, i) => i * TAU / meridians).forEach((lon) => {
-    const points = Array.from({ length: segments + 1 }, (_, j) => {
-      const p = spherePoint(-Math.PI / 2 + Math.PI * j / segments, lon, radius, spin, time);
-      return { x: cx + p.x, y: cy + p.y, z: p.z };
+  for (let strand = 0; strand < flowCount; strand++) {
+    const points = Array.from({ length: samples + 1 }, (_, step) => {
+      const lat = -1.36 + step / samples * 2.72;
+      const phase = strand * TAU / flowCount;
+      const lon = phase + lat * (0.72 + strand * 0.018)
+      + Math.sin(lat * 3.2 + time * 0.0002 + strand) * 0.16;
+      const point = spherePoint(lat, lon, radius * 1.006, spin, time);
+      return { x: cx + point.x, y: cy + point.y, z: point.z };
     });
-    strokeProjectedPath(ctx, points);
-  });
+    strokeSurfacePath(ctx, points, strand % 3 === 0);
+  }
 
-  for (let band = 0; band < (compact ? 3 : 6); band++) {
-    const points = Array.from({ length: segments + 1 }, (_, j) => {
-      const lon = j / segments * TAU;
-      const lat = -0.83 + band * 0.33 + Math.sin(lon * 1.7 + time * 0.00022 + band) * 0.055;
-      const p = spherePoint(lat, lon, radius * 1.003, spin, time);
-      return { x: cx + p.x, y: cy + p.y, z: p.z };
+  const counterflow = compact ? 3 : 7;
+  for (let strand = 0; strand < counterflow; strand++) {
+    const points = Array.from({ length: samples + 1 }, (_, step) => {
+      const lat = -1.2 + step / samples * 2.4;
+      const phase = strand * TAU / counterflow + 0.4;
+      const lon = phase - lat * 1.12 + Math.sin(lat * 4 + time * 0.00016) * 0.1;
+      const point = spherePoint(lat, lon, radius * 1.008, spin, time);
+      return { x: cx + point.x, y: cy + point.y, z: point.z };
     });
-    ctx.save();
-    ctx.setLineDash([compact ? 2 : 3, compact ? 5 : 7]);
-    strokeProjectedPath(ctx, points);
-    ctx.restore();
+    strokeSurfacePath(ctx, points, strand % 2 === 0);
+  }
+
+  const flecks = compact ? 28 : 72;
+  for (let i = 0; i < flecks; i++) {
+    const lat = Math.sin(i * 17.13) * 1.22;
+    const lon = i * 2.39996 + time * 0.000025;
+    const point = spherePoint(lat, lon, radius * 1.009, spin, time);
+    if (point.z <= 0) continue;
+    ctx.beginPath();
+    ctx.arc(cx + point.x, cy + point.y, i % 7 === 0 ? 1 : 0.62, 0, TAU);
+    ctx.fillStyle = i % 4 === 0 ? "rgba(196,98,45,0.52)" : "rgba(42,31,26,0.25)";
+    ctx.fill();
   }
 }

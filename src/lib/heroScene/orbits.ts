@@ -8,7 +8,7 @@ export function drawOrbitalShell(
 ) {
   const t = time * 0.001;
   ctx.save();
-  ctx.translate(center.x + pointer.x * radius * 0.12, center.y + pointer.y * radius * 0.12);
+  ctx.translate(center.x, center.y);
   const rings = [
     { x: 1.36, y: 0.53, angle: -0.46, color: "rgba(196,98,45,0.42)" },
     { x: 1.58, y: 0.69, angle: 0.82, color: "rgba(42,31,26,0.19)" },
@@ -16,7 +16,7 @@ export function drawOrbitalShell(
   ];
   rings.forEach((ring, index) => {
     ctx.save();
-    ctx.rotate(ring.angle + t * (index === 1 ? -0.012 : 0.008));
+    ctx.rotate(ring.angle + t * (index === 1 ? -0.012 : 0.008) + pointer.x * (index - 1) * 0.018 + pointer.y * 0.008);
     ctx.beginPath();
     ctx.ellipse(0, 0, radius * ring.x, radius * ring.y, 0, 0, TAU);
     ctx.strokeStyle = ring.color;

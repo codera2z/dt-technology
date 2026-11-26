@@ -12,10 +12,7 @@ export function drawHeroScene(
   ctx.clearRect(0, 0, width, height);
   const size = Math.min(width, height);
   const radius = size * (0.248 + Math.sin(time * 0.00034) * 0.002);
-  const center = {
-    x: width / 2 + Math.sin(time * 0.00012) * 3,
-    y: height / 2 + Math.cos(time * 0.00016) * 4,
-  };
+  const center = { x: width / 2, y: height / 2 };
   const atmosphere = ctx.createRadialGradient(center.x, center.y, radius * 0.25, center.x, center.y, radius * 2.55);
   atmosphere.addColorStop(0, "rgba(196,98,45,0.19)");
   atmosphere.addColorStop(0.38, "rgba(243,233,216,0.23)");

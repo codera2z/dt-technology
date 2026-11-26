@@ -9,8 +9,10 @@ export function drawHeroSphere(
 ) {
   const breathing = 1 + Math.sin(time * 0.00034) * 0.012;
   const r = radius * breathing;
-  const x = center.x + pointer.x * r * 0.07;
-  const y = center.y + pointer.y * r * 0.07;
+  const x = center.x;
+  const y = center.y;
+  const lightX = x - r * (0.4 - pointer.x * 0.2);
+  const lightY = y - r * (0.48 - pointer.y * 0.2);
 
   const castShadow = ctx.createRadialGradient(x + r * 0.08, y + r * 0.9, r * 0.08, x + r * 0.08, y + r * 0.9, r * 0.92);
   castShadow.addColorStop(0, "rgba(73,43,31,0.17)");
@@ -21,13 +23,13 @@ export function drawHeroSphere(
   ctx.fillStyle = castShadow;
   ctx.fill();
 
-  const ball = ctx.createRadialGradient(x - r * 0.4, y - r * 0.5, r * 0.04, x, y, r * 1.16);
+  const ball = ctx.createRadialGradient(lightX, lightY, r * 0.025, x + r * 0.12, y + r * 0.12, r * 1.2);
   ball.addColorStop(0, "#fffefa");
-  ball.addColorStop(0.28, "#FAF5EC");
-  ball.addColorStop(0.58, "#F0DDCA");
-  ball.addColorStop(0.84, "#D9B397");
-  ball.addColorStop(0.96, "#C17B54");
-  ball.addColorStop(1, "#9F5939");
+  ball.addColorStop(0.24, "#FAF5EC");
+  ball.addColorStop(0.53, "#F0DDCA");
+  ball.addColorStop(0.8, "#D9B397");
+  ball.addColorStop(0.95, "#C17B54");
+  ball.addColorStop(1, "#935036");
 
   ctx.beginPath();
   ctx.arc(x, y, r, 0, TAU);
@@ -42,14 +44,21 @@ export function drawHeroSphere(
   ctx.arc(x, y, r - 1, 0, TAU);
   ctx.clip();
 
-  const sheen = ctx.createRadialGradient(x - r * 0.46, y - r * 0.58, 0, x - r * 0.22, y - r * 0.28, r * 1.35);
-  sheen.addColorStop(0, "rgba(255,255,255,0.46)");
-  sheen.addColorStop(0.48, "rgba(255,255,255,0.08)");
+  const sheen = ctx.createRadialGradient(lightX, lightY, 0, lightX + r * 0.18, lightY + r * 0.16, r * 1.3);
+  sheen.addColorStop(0, "rgba(255,255,255,0.56)");
+  sheen.addColorStop(0.42, "rgba(255,255,255,0.1)");
   sheen.addColorStop(1, "rgba(196,98,45,0)");
   ctx.fillStyle = sheen;
   ctx.fillRect(x - r, y - r, r * 2, r * 2);
 
-  drawSphereMesh(ctx, x, y, r * 0.99, time * 0.000075 + pointer.x * 0.16, time, compact);
+  const innerGlow = ctx.createRadialGradient(lightX, lightY, 0, lightX, lightY, r * 0.72);
+  innerGlow.addColorStop(0, "rgba(255,255,255,0.19)");
+  innerGlow.addColorStop(0.5, "rgba(255,255,255,0.035)");
+  innerGlow.addColorStop(1, "rgba(255,255,255,0)");
+  ctx.fillStyle = innerGlow;
+  ctx.fillRect(x - r, y - r, r * 2, r * 2);
+
+  drawSphereMesh(ctx, x, y, r * 0.99, time * 0.000075 + pointer.x * 0.2 + pointer.y * 0.055, time, compact);
 
   const edgeShade = ctx.createRadialGradient(x - r * 0.12, y - r * 0.2, r * 0.24, x + r * 0.2, y + r * 0.28, r * 1.18);
   edgeShade.addColorStop(0, "rgba(74,36,23,0)");
@@ -59,8 +68,8 @@ export function drawHeroSphere(
   ctx.fillRect(x - r, y - r, r * 2, r * 2);
 
   ctx.beginPath();
-  ctx.ellipse(x - r * 0.37, y - r * 0.45, r * 0.2, r * 0.075, -0.76, 0, TAU);
-  ctx.fillStyle = "rgba(255,255,255,0.2)";
+  ctx.ellipse(lightX - r * 0.035, lightY - r * 0.025, r * 0.2, r * 0.075, -0.76 + pointer.x * 0.08, 0, TAU);
+  ctx.fillStyle = "rgba(255,255,255,0.25)";
   ctx.fill();
 
   const sweep = (time % 13200) / 13200;

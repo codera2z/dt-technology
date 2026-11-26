@@ -14,9 +14,10 @@ export function drawParticleField(
     const angle = i * 2.39996 + t * (0.035 + (i % 6) * 0.006);
     const depth = (i % 9) / 9;
     const orbit = radius * (1.42 + (i % 9) * 0.045);
+    const parallax = (foreground ? 0.052 : -0.018) * (0.35 + depth);
     particles.push({
-      x: center.x + Math.cos(angle) * orbit + pointer.x * radius * (0.1 + depth * 0.08),
-      y: center.y + Math.sin(angle * 1.13) * orbit * 0.66 + pointer.y * radius * 0.12,
+      x: center.x + Math.cos(angle) * orbit + pointer.x * radius * parallax,
+      y: center.y + Math.sin(angle * 1.13) * orbit * 0.66 + pointer.y * radius * parallax * 0.72,
       size: i % 13 === 0 ? 2.1 : i % 4 === 0 ? 1.35 : 0.8,
       alpha: 0.14 + depth * 0.34,
       accent: i % 5 === 0,
