@@ -1,4 +1,5 @@
 import { drawSphereMesh } from "./geometry";
+import { drawSilkRibbons } from "./ribbons";
 import { TAU } from "./types";
 
 type Center = { x: number; y: number };
@@ -59,6 +60,7 @@ export function drawHeroSphere(
   ctx.fillRect(x - r, y - r, r * 2, r * 2);
 
   drawSphereMesh(ctx, x, y, r * 0.99, time * 0.000075 + pointer.x * 0.2 + pointer.y * 0.055, time, compact);
+  drawSilkRibbons(ctx, x, y, r * 0.98, time, pointer, compact);
 
   const edgeShade = ctx.createRadialGradient(x - r * 0.12, y - r * 0.2, r * 0.24, x + r * 0.2, y + r * 0.28, r * 1.18);
   edgeShade.addColorStop(0, "rgba(74,36,23,0)");

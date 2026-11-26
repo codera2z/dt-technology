@@ -18,8 +18,8 @@ export function spherePoint(lat: number, lon: number, radius: number, spin: numb
 function strokeSurfacePath(ctx: CanvasRenderingContext2D, points: ScenePoint[], accent: boolean) {
   ctx.beginPath();
   points.forEach((point, index) => index ? ctx.lineTo(point.x, point.y) : ctx.moveTo(point.x, point.y));
-  ctx.strokeStyle = "rgba(42,31,26,0.06)";
-  ctx.lineWidth = 0.58;
+  ctx.strokeStyle = "rgba(42,31,26,0.035)";
+  ctx.lineWidth = 0.5;
   ctx.stroke();
 
   ctx.beginPath();
@@ -31,8 +31,8 @@ function strokeSurfacePath(ctx: CanvasRenderingContext2D, points: ScenePoint[], 
       drawing = true;
     } else drawing = false;
   });
-  ctx.strokeStyle = accent ? "rgba(196,98,45,0.3)" : "rgba(42,31,26,0.27)";
-  ctx.lineWidth = accent ? 0.9 : 0.74;
+  ctx.strokeStyle = accent ? "rgba(196,98,45,0.24)" : "rgba(42,31,26,0.19)";
+  ctx.lineWidth = accent ? 0.78 : 0.62;
   ctx.stroke();
 }
 
@@ -40,8 +40,8 @@ export function drawSphereMesh(
   ctx: CanvasRenderingContext2D, cx: number, cy: number, radius: number,
   spin: number, time: number, compact: boolean,
 ) {
-  const contourCount = compact ? 10 : 18;
-  const flowCount = compact ? 7 : 15;
+  const contourCount = compact ? 8 : 12;
+  const flowCount = compact ? 6 : 11;
   const samples = compact ? 56 : 88;
 
   for (let band = 0; band < contourCount; band++) {
@@ -68,7 +68,7 @@ export function drawSphereMesh(
     strokeSurfacePath(ctx, points, strand % 3 === 0);
   }
 
-  const counterflow = compact ? 3 : 7;
+  const counterflow = compact ? 2 : 5;
   for (let strand = 0; strand < counterflow; strand++) {
     const points = Array.from({ length: samples + 1 }, (_, step) => {
       const lat = -1.2 + step / samples * 2.4;
@@ -80,7 +80,7 @@ export function drawSphereMesh(
     strokeSurfacePath(ctx, points, strand % 2 === 0);
   }
 
-  const flecks = compact ? 28 : 72;
+  const flecks = compact ? 24 : 56;
   for (let i = 0; i < flecks; i++) {
     const lat = Math.sin(i * 17.13) * 1.22;
     const lon = i * 2.39996 + time * 0.000025;
