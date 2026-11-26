@@ -1,37 +1,36 @@
-# HANDOFF v27 | date: 2026-11-25 | last code commit: 065c2c0
+# HANDOFF v32 | date: 2026-11-26 | last code commit: 5daac23
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Phase and next step
-- Phase: Build — final visual refinements implemented; typecheck and production build pass.
-- Next: Review the page in a browser at 375, 768, 1024 and 1440px, including reduced-motion behavior and text wrapping.
+- Phase: Final QA - code review and local checks complete; responsive and runtime reduced-motion checks remain.
+- Next: Recheck 375, 768, 1024 and 1440px after the Services layout change. Runtime-check `prefers-reduced-motion: reduce` when browser emulation is available. Do not edit global MCP config without owner approval.
 
 ## Approved
-- Vite, React, TypeScript, Tailwind CSS v4 and Motion; no new dependencies.
-- Cream / espresso / terracotta, EB Garamond + Inter; “AI-accelerated, engineer-accountable.”
+- Vite, React, TypeScript, Tailwind CSS v4 and Motion; no additional dependencies approved.
+- Cream / espresso / terracotta, EB Garamond + Inter; "AI-accelerated, engineer-accountable."
 
 ## Locked decisions
 - One page: Hero, Services, Contact; no footer. Header has only Services and Contact.
-- Keep [01]/[02]/[03] eyebrow numbering and do not invent claims or commit secrets/personal data.
-- Respect the visitor's system reduced-motion preference; no on-page animation pause controls.
-- Contact form is client-side only; it does not send messages.
-- Keep hello@dttechnology.com as provisional public email; mailbox is unconfigured. No Web3Forms or personal inbox; defer delivery until a company inbox exists and the owner asks.
+- Keep [01]/[02]/[03] eyebrow numbering; do not invent claims or commit secrets/personal data.
+- Respect system reduced-motion preference. Contact form is client-side only.
+- Keep hello@dttechnology.com as provisional public email; mailbox is unconfigured.
 
 ## Done
-- Commits 1–5 complete: header/hero, canvas, service illustrations, contact form and global polish.
-- Refined hero-sphere lighting with a soft cast shadow, warmer edge depth and a restrained specular reflection.
-- Added a soft transition into Services and Contact, more atmospheric contact-panel lighting, and consistent arrow/link micro-interactions.
-- No dependencies or content/functional changes added.
-- `npm run typecheck`, `npm run build` and `git diff --check` pass.
+- Latest code commit `5daac23` adds five original service scenes, an editorial two-column intro and larger artwork with mobile placement below copy.
+- Reduced-motion CSS now also neutralises the revealed arrow and hover illustration transforms that were winning through selector specificity.
+- `npm run typecheck` passed on 2026-11-26. `npm run build` passed on 2026-11-26 (467 modules). `git diff --check` passed.
+- Source `.ts`, `.tsx` and `.css` files are all under 150 lines.
+- Firefox MCP remains connected with its dedicated profile; responsive harness is `artifacts/visual-captures/responsive-harness.html`.
 
 ## In progress / not verified
-- Browser visual QA at 375, 768, 1024 and 1440px and reduced-motion interaction review remain pending; no browser executable or browser automation module was available in the connected runtime.
-- Current refinements are local and uncommitted.
+- Responsive measurements at 375, 768, 1024 and 1440px passed before `5daac23`; repeat after its Services layout change.
+- Runtime reduced-motion preference was not toggled: current Firefox tools expose no viewport or media-preference emulation. Edge/headless attempts failed; no Playwright, dependency or global MCP config changes.
 
 ## Owner preferences
-- Plain explanations; Windows PowerShell. No intermediate build logs/screenshots.
+- Plain explanations; Windows PowerShell. Do not inspect existing screenshots unless explicitly asked.
 
 ## Commands for final review
-- `npm run dev`
-- Check text wrapping, clipping, horizontal overflow and layout at 375, 768, 1024 and 1440px.
-- Verify prefers-reduced-motion disables the marquee and service-illustration animations and keeps all content visible.
+- `npm run typecheck`
+- `npm run build`
+- Recheck responsive widths and runtime reduced motion when browser controls permit.

@@ -38,4 +38,9 @@
 @media (prefers-reduced-motion: reduce) {
   .service-row, .service-row::before, .service-row::after, .service-row__number, .service-row__illustration, .service-row__copy, .service-row__arrow { opacity: 1; transform: none; transition: none; }
   .service-row::before { display: none; }
+  .service-row.has-revealed .service-row__arrow,
+  .service-row:hover .service-row__illustration,
+  .service-row:hover .service-row__arrow,
+  .service-row:focus-within .service-row__arrow,
+  .service-row:active .service-row__arrow { transform: none; }
 }
