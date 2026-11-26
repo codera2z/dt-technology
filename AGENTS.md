@@ -26,10 +26,11 @@ Standing project and collaboration rules. Progress belongs only in HANDOFF.md; d
 - Design for 375, 768, 1024 and 1440px; avoid horizontal overflow.
 
 ## Workflow
-- Follow the five commits in DESIGN.md, one scoped commit at a time on main, message format area: what changed.
-- The owner prefers design implementation to proceed without build logs/screenshots after every commit. Use sound responsive judgment and self-review the code. The owner can share preview feedback at any time.
-- Defer consolidated build, responsive and accessibility validation until all design commits are complete. Then give exact commands and a clear final check list. Never claim unrun checks passed or visual behavior is verified.
+- Work through the five implementation phases in DESIGN.md as separate, reviewable change sets on main; do not create commits.
+- The owner handles all Git write operations, including staging, commits, pushes, merges and branch/history changes. Do not run Git commands that modify repository state. Leave assistant edits unstaged and uncommitted for owner review. Report changed files and, when useful, suggest a commit message without executing it.
+- The owner prefers design implementation to proceed without build logs/screenshots after every implementation phase. Use sound responsive judgment and self-review the code. The owner can share preview feedback at any time.
+- Defer consolidated build, responsive and accessibility validation until all implementation phases are complete. Then give exact commands and a clear final check list. Never claim unrun checks passed or visual behavior is verified.
 - Use only scripts present in package.json. Current scripts: npm run build, npm run typecheck, npm run dev.
-- Never force-push, rewrite history or delete files/branches without explaining the risk and getting approval.
+- Do not delete project files without explaining the impact and getting approval.
 - Check official documentation before using a library API; cite URL and version when explaining it.
 - Log third-party components/assets in LICENCES.md after checking their own-page licence. Do not use unclear licences.

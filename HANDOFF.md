@@ -1,4 +1,4 @@
-# HANDOFF v33 | date: 2026-11-26 | last code commit: a4c6ee1
+# HANDOFF v34 | date: 2026-11-26 | last code commit: a4c6ee1
 
 Rules: overwrite completely; preserve this template and stay under 350 words.
 
@@ -28,6 +28,7 @@ Rules: overwrite completely; preserve this template and stay under 350 words.
 
 ## Owner preferences
 - Plain explanations; Windows PowerShell. Capture screenshots when needed; do not inspect existing screenshots unless asked.
+- Owner handles all Git write operations, including staging, commits, pushes, merges and branch/history changes. Leave assistant edits unstaged and uncommitted for owner review.
 
 ## Commands for final review
 - `npm run typecheck`
