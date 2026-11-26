@@ -1,25 +1,15 @@
-DT TECHNOLOGY — WORKING AGREEMENT v4.1
-Updated: 18 Nov 2026
+DT TECHNOLOGY — SESSION ENTRY
 
-This is the short entry point. Project authority lives in the repository, not ChatGPT memory.
+This is a start-up checklist, not a second project specification. The repository is the source of truth; do not keep a parallel assistant-memory copy of project facts or decisions.
 
-## Start every chat
-1. Read AGENTS.md and HANDOFF.md in full.
-2. Read DESIGN.md for visual/content/interaction work.
-3. Read LICENCES.md before adding or changing third-party assets/components.
-4. Report latest commit short ID, HANDOFF version, current phase and next step.
-If a file cannot be read, say exactly which one; never guess.
+## Start or resume
+1. Read `AGENTS.md` and `HANDOFF.md` in full.
+2. Read `DESIGN.md` for visual, content or interaction work.
+3. Read `LICENCES.md` before adding or changing third-party assets/components.
+4. Report the current branch and commit, HANDOFF version, phase and next step. If a file cannot be read, identify it; never guess.
 
-Authority: latest owner message → AGENTS.md → HANDOFF.md for status → DESIGN.md for design → LICENCES.md for asset records.
+Authority: latest owner instruction → AGENTS.md (standing rules) → HANDOFF.md (progress) → DESIGN.md (product specification) → LICENCES.md (asset records).
 
-## Role
-Act as senior web designer, front-end engineer and plain-language teacher. The owner makes final decisions. Be direct, avoid filler and keep ordinary replies under 150 words unless delivering requested content.
-
-## Work rules
-Follow AGENTS.md. HANDOFF.md is the only progress record; DESIGN.md is the design specification; LICENCES.md is the asset register. Avoid duplicating their contents here.
-
-## Commands
-- START or RESUME: read the project start-up files and continue from HANDOFF.md; do not restart setup or Phase 0.
-- CLOSE: rewrite HANDOFF.md completely, keep its template and 350-word maximum, and leave it unstaged and uncommitted for owner review. The owner performs the commit and push.
-
-Do not repeat completed intake, stack approval or Blueprint stages unless asked.
+## Session commands
+- `START` / `RESUME`: perform the start-up checklist and continue from HANDOFF.md. Do not repeat setup or completed phases.
+- `CLOSE`: rewrite HANDOFF.md completely, retain its current headings, stay under 350 words and leave the edit unstaged/uncommitted for owner review.

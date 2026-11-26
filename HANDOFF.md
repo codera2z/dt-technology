@@ -1,37 +1,33 @@
-# HANDOFF v36 | date: 2026-11-26 | last code commit: a4c6ee1
+# HANDOFF v37 | date: 2026-11-26 | last code commit: a4c6ee1
 
-Rules: overwrite completely; preserve this template and stay under 350 words.
+Rules: This is the only progress snapshot. Rewrite it fully, retain these headings and stay under 350 words. Durable rules and design details live in AGENTS.md and DESIGN.md.
 
 ## Phase and next step
-- Phase: Hero animation refinement complete; Services artwork/layout present; consolidated validation in progress.
-- Next: Complete browser checks at 375, 768, 1024 and 1440px plus runtime reduced-motion behavior. Fix observed issues, then finish accessibility and performance review.
+- Phase: 5 — consolidated verification and final review. The page, hero animation, five service scenes and client-side contact form are implemented.
+- Next: Check 375, 768, 1024 and 1440px in a browser; test runtime reduced-motion behavior; fix issues, then complete accessibility and performance review.
 
 ## Approved
-- Vite, React, TypeScript, Tailwind CSS v4 and Motion; no additional dependencies approved.
-- Cream / espresso / terracotta, EB Garamond + Inter; "AI-accelerated, engineer-accountable."
+- No new dependencies approved. Follow the existing stack and implementation rules in AGENTS.md.
 
 ## Locked decisions
-- One page: Hero, Services, Contact; no footer. Header has only Services and Contact.
-- Keep [01]/[02]/[03] eyebrow numbering; do not invent claims or commit secrets/personal data.
-- Respect system reduced-motion preference. Contact form is client-side only.
-- Keep hello@dttechnology.com as provisional public email; mailbox is unconfigured.
+- Product scope and durable content/interaction decisions are in DESIGN.md. Contact delivery remains disabled until a company inbox exists and the owner explicitly requests integration.
 
 ## Done
-- `d16c078` anchors the hero composition and makes pointer response local to sphere lighting/spin, orbital rings and separate particle depths.
+- `d16c078` anchors the hero composition and localises pointer response to sphere lighting/spin, orbital rings and separate particle depths.
 - `a4c6ee1` adds three animated silk highlights and softens the sphere grid.
-- The 26 Nov Services follow-up is reflected in source: editorial two-column desktop intro, five original SVG service scenes, and artwork below copy on mobile.
-- `npm run typecheck` passed on 2026-11-26.
-- `npm run build` passed on 2026-11-26 with Vite 8.3.8; output: 404.53 kB JS and 42.32 kB CSS (uncompressed).
-- All application `.ts`, `.tsx` and `.css` files remain under 150 lines. No dependencies added.
+- Services has an editorial two-column desktop intro, five original SVG scenes and artwork below copy on mobile.
+- `npm run typecheck` and `npm run build` passed on 2026-11-26 at `611c7a7` (Vite 8.3.8; JS 404.53 kB and CSS 42.32 kB, uncompressed). Commits through current HEAD `c8c4792` changed documentation/assets, not application source.
+- Application `.ts`, `.tsx` and `.css` files are under 150 lines; no dependencies were added.
 
 ## In progress / not verified
-- Browser layout checks at 375, 768, 1024 and 1440px were not run. Native browser control failed because its pipe was unavailable; no browser executable was found on PATH.
-- Runtime reduced-motion behavior remains unverified. Source includes `useReducedMotion` and reduced-motion CSS fallbacks, but this is not a runtime test.
+- Browser layout checks were not run: native browser control could not connect to its pipe, and no browser executable was found on PATH.
+- Runtime reduced-motion behavior is unverified; source fallbacks are not a runtime test.
+- Accessibility and performance review remains after browser checks.
 
 ## Owner preferences
-- Plain explanations; Windows PowerShell. Do not inspect existing screenshots unless asked.
+- See the collaboration preferences in AGENTS.md; no separate handoff-only preferences.
 
 ## Commands for final review
 - `npm run typecheck`
 - `npm run build`
-- Recheck responsive widths and runtime reduced motion when browser controls permit.
+- Check the four responsive widths and runtime reduced motion in a browser.
